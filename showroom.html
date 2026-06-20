@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Showroom – Bäckerei Alisa</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .flavors-wrap {
+            background: var(--brown-deep);
+            padding: 4rem;
+        }
+
+        .flavors-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .flavors-wrap .section-label {
+            color: var(--brown-mid);
+        }
+
+        .flavors-wrap .section-title {
+            color: var(--brown-light);
+        }
+
+        .flavor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+            gap: 1px;
+            margin-top: 1.5rem;
+            background: rgba(196, 168, 130, .2);
+        }
+
+        .flavor-pill {
+            background: transparent;
+            padding: .8rem 1rem;
+            font-size: .76rem;
+            color: var(--brown-light);
+            text-align: center;
+            letter-spacing: .08em;
+            opacity: .85;
+            transition: opacity .2s, background .2s;
+        }
+
+        .flavor-pill:hover {
+            opacity: 1;
+            background: rgba(196, 168, 130, .15);
+        }
+
+        .sr-slide-wrap {
+            position: relative;
+            overflow: hidden;
+            background: var(--brown-deep);
+        }
+
+        .sr-slide-track {
+            display: flex;
+            transition: transform .6s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .sr-slide {
+            min-width: 100%;
+            height: 780px;
+            object-fit: contain;
+            display: block;
+            background: var(--brown-deep);
+        }
+
+        .sr-dots-dots {
+            position: absolute;
+            bottom: 1.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: .6rem;
+            z-index: 10;
+        }
+
+        .sr-dots-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .45);
+            cursor: pointer;
+            transition: background .2s, transform .2s;
+            border: 2px solid rgba(255, 255, 255, .6);
+            padding: 0;
+        }
+
+        .sr-dots-dot.active {
+            background: #fff;
+            transform: scale(1.25);
+        }
+
+        @media(max-width:720px) {
+            .flavors-wrap {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .sr-slide {
+                height: 420px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="nav.js"></script>
+
+    <div class="page-hero-strip" style="margin-top:72px;">
+        <div class="page-hero-strip-text">
+            <p class="section-label">Unsere Kreationen</p>
+            <h1 class="section-title">Der <em>Showroom</em></h1>
+        </div>
+    </div>
+    <div style="max-width:1100px;margin:0 auto;padding:2.5rem 4rem 1rem;">
+        <p style="font-size:.87rem;line-height:2;opacity:.75;max-width:560px;">
+            Von der klassischen Hochzeitstorte bis zur modernen Designer-Kreation,
+            lassen Sie sich von unseren echten Kreationen inspirieren.
+        </p>
+    </div>
+    <div style="max-width:1100px;margin:0 auto;padding:0 4rem;">
+        <div class="sr-slide-wrap">
+            <div class="sr-slide-track">
+                <img src="Fotos/torten showroom/torte1.PNG" alt="" class="sr-slide" />
+                <img src="Fotos/torten showroom/torte2.PNG" alt="" class="sr-slide" />
+                <img src="Fotos/torten showroom/torte3.PNG" alt="" class="sr-slide" />
+                <img src="Fotos/torten showroom/torte4.PNG" alt="" class="sr-slide" />
+                <img src="Fotos/torten showroom/torte5.PNG" alt="" class="sr-slide" />
+                <img src="Fotos/torten showroom/torte6.PNG" alt="" class="sr-slide" />
+                <img src="Fotos/torten showroom/torte7.PNG" alt="" class="sr-slide" />
+                <img src="Fotos/torten showroom/torte8.PNG" alt="" class="sr-slide" />
+                <img src="Fotos/torten showroom/torte9.jpg" alt="" class="sr-slide" />
+            </div>
+            <div class="sr-dots-dots" id="sr-dots"></div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const slides = document.querySelectorAll('.sr-slide');
+            const dotsWrap = document.getElementById('sr-dots');
+            let cur = 0;
+            slides.forEach((_, i) => {
+                const d = document.createElement('button');
+                d.className = 'sr-dots-dot' + (i === 0 ? ' active' : '');
+                d.setAttribute('aria-label', 'Bild ' + (i + 1));
+                d.onclick = () => go(i);
+                dotsWrap.appendChild(d);
+            });
+            function go(n) {
+                dotsWrap.children[cur].classList.remove('active');
+                cur = (n + slides.length) % slides.length;
+                document.querySelector('.sr-slide-track').style.transform = `translateX(-${cur * 100}%)`;
+                dotsWrap.children[cur].classList.add('active');
+            }
+            setInterval(() => go(cur + 1), 5000);
+        })();
+    </script>
+    <div class="flavors-wrap" style="margin-top:3rem;">
+        <div class="flavors-inner">
+            <p class="section-label">Verfügbare Geschmacksrichtungen</p>
+            <h2 class="section-title">Unsere <em>Füllungen</em></h2>
+            <div class="flavor-grid">
+                <div class="flavor-pill">Vanille</div>
+                <div class="flavor-pill">Schokolade</div>
+                <div class="flavor-pill">Erdbeere</div>
+                <div class="flavor-pill">Orange</div>
+                <div class="flavor-pill">Zitrone / Limette</div>
+                <div class="flavor-pill">Raffaello</div>
+                <div class="flavor-pill">Karamell</div>
+                <div class="flavor-pill">Kokos</div>
+                <div class="flavor-pill">Kirsch</div>
+                <div class="flavor-pill">Lotus Biscoff</div>
+                <div class="flavor-pill">Cheesecake</div>
+                <div class="flavor-pill">Nuss-Nougat</div>
+                <div class="flavor-pill">Auf Anfrage</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <em>Bäckerei Alisa</em>
+        Die etwas andere Bäckerei &nbsp;·&nbsp; © 2026 &nbsp;·&nbsp; Alle Rechte vorbehalten
+        <br><br><span style="opacity:0.5;">
+            <a href="rechtliches/impressum.html" style="color:inherit;text-decoration:none;">Impressum</a>
+            &nbsp;·&nbsp;
+            <a href="rechtliches/datenschutz.html" style="color:inherit;text-decoration:none;">Datenschutz</a>
+        </span>
+    </footer>
+</body>
+
+</html>

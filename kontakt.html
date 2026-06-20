@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt – Bäckerei Alisa</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .kontakt-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 4rem 5rem;
+        }
+
+        .standorte-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .standort {
+            background: var(--bg);
+            border: 1px solid #e8d9c5;
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        .standort-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--brown-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: .8rem;
+            border-bottom: 1px solid #e8d9c5;
+        }
+
+        .kontakt-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: .9rem 0;
+            border-bottom: 1px solid #f0e6d8;
+        }
+
+        .kontakt-item:last-child {
+            border-bottom: none;
+        }
+
+        .kontakt-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .95rem;
+            flex-shrink: 0;
+            color: var(--brown);
+            margin-top: 1px;
+        }
+
+        .kontakt-label {
+            font-size: .62rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: .2rem;
+        }
+
+        .kontakt-value {
+            font-size: .85rem;
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        .map-box {
+            width: 100%;
+            height: 200px;
+            background: var(--bg2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e8d9c5;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--muted);
+            font-size: .85rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-strip {
+            max-width: 1100px;
+            margin: 2.5rem auto 0;
+            padding: 0 4rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-strip p {
+            font-size: .82rem;
+            color: var(--muted);
+        }
+
+        @media(max-width:720px) {
+            .kontakt-wrap {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .standorte-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .social-strip {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="nav.js"></script>
+
+    <div class="page-hero-strip" style="margin-top:72px;">
+        <div class="page-hero-strip-text">
+            <p class="section-label">Finden Sie uns</p>
+            <h1 class="section-title"><em>Kontakt</em> & Anfahrt</h1>
+        </div>
+    </div>
+    <div class="kontakt-wrap">
+        <p class="section-label" style="margin-top:2rem;">Unsere zwei Standorte</p>
+        <h2 class="section-title">Wir sind <em>zweimal</em> für Sie da</h2>
+        <div class="standorte-grid">
+
+            <div class="standort">
+                <p class="standort-name">Standort 1 – Oberhausen</p>
+
+                <div class="kontakt-item">
+                    <div class="kontakt-icon">📍</div>
+                    <div>
+                        <p class="kontakt-label">Adresse</p>
+                        <p class="kontakt-value">Dorstener Straße 550<br>46119 Oberhausen</p>
+                    </div>
+                </div>
+
+                <div class="kontakt-item">
+                    <div class="kontakt-icon">📞</div>
+                    <div>
+                        <p class="kontakt-label">Telefon</p>
+                        <p class="kontakt-value">+49 157 72519649</p>
+                    </div>
+                </div>
+
+
+                <div class="kontakt-item">
+                    <div class="kontakt-icon">🕐</div>
+                    <div>
+                        <p class="kontakt-label">Öffnungszeiten</p>
+                        <p class="kontakt-value"><br>Mo – Fr: 06:00 – 17:30 Uhr<br>Sa & So: 08:00 – 16:00 Uhr
+                        </p>
+                    </div>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.713826267281!2d6.884034100000001!3d51.5368085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8eb8ed5e6df95%3A0x7b862a5d59146408!2sB%C3%A4ckerei%20Alisa!5e0!3m2!1sde!2sde!4v1780952116619!5m2!1sde!2sde"
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="standort">
+                <p class="standort-name">Standort 2 – Bottrop</p>
+
+                <div class="kontakt-item">
+                    <div class="kontakt-icon">📍</div>
+                    <div>
+                        <p class="kontakt-label">Adresse</p>
+                        <p class="kontakt-value">Gladbecker Straße 189<br>46240 Bottrop</p>
+                    </div>
+                </div>
+
+                <div class="kontakt-item">
+                    <div class="kontakt-icon">📞</div>
+                    <div>
+                        <p class="kontakt-label">Telefon</p>
+                        <p class="kontakt-value">+49 157 72519649</p>
+                    </div>
+                </div>
+
+
+                <div class="kontakt-item">
+                    <div class="kontakt-icon">🕐</div>
+                    <div>
+                        <p class="kontakt-label">Öffnungszeiten</p>
+                        <p class="kontakt-value">Mo: geschlossen<br>Di – Fr: 06:00 – 17:30 Uhr<br>Sa & So: 08:00 – 16:00
+                            Uhr
+                        </p>
+                    </div>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.6235207244436!2d6.932594!3d51.5384647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8e90017c54ae5%3A0xed8798e9cebdd2b8!2sB%C3%A4ckerei%20Alisa%20-%20Balkan%20Street%20Food!5e0!3m2!1sde!2sde!4v1780952459966!5m2!1sde!2sde"
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-strip">
+        <span style="font-size:1.1rem;">📱</span>
+        <p>
+            Instagram: <strong>@baeckereialisa_</strong>
+            &nbsp;·&nbsp;
+            Facebook: <strong>@Alisa.Oberhausen</strong>
+            &nbsp;·&nbsp;
+            TikTok: <strong>@beackerei_alisa</strong>
+        </p>
+    </div>
+    <div style="height:4rem;"></div>
+
+    <footer>
+        <em>Bäckerei Alisa</em>
+        Die etwas andere Bäckerei &nbsp;·&nbsp; © 2026 &nbsp;·&nbsp; Alle Rechte vorbehalten
+        <br><br><span style="opacity:0.5;">
+            <a href="rechtliches/impressum.html" style="color:inherit;text-decoration:none;">Impressum</a>
+            &nbsp;·&nbsp;
+            <a href="rechtliches/datenschutz.html" style="color:inherit;text-decoration:none;">Datenschutz</a>
+        </span>
+    </footer>
+</body>
+
+</html>

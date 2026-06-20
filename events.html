@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events – Bäckerei Alisa</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .events-header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 4rem 2rem;
+        }
+
+        .events-header p.body {
+            font-size: .9rem;
+            line-height: 2;
+            color: var(--text);
+            opacity: .8;
+            margin-bottom: .8rem;
+            max-width: 720px;
+        }
+
+        .events-anlass-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-top: 1.2rem;
+        }
+
+        .events-anlass {
+            font-size: .7rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            border: 1px solid var(--brown-mid);
+            color: var(--brown);
+            padding: .35rem .9rem;
+        }
+
+        .events-photo-grid {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            padding: 0 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .events-photo-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .events-cta {
+            margin: 3rem 4rem 0;
+            padding: 2.5rem 3rem;
+            background: var(--brown-dark);
+            color: var(--brown-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .events-cta p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #fff;
+            opacity: 1;
+        }
+
+        @media(max-width:720px) {
+            .events-header {
+                padding: 2rem 1.5rem;
+            }
+
+            .events-photo-grid {
+                padding: 0 1.5rem;
+                grid-template-columns: 1fr;
+            }
+
+            .events-cta {
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="nav.js"></script>
+
+    <div class="page-hero-strip" style="margin-top:72px;">
+        <div class="page-hero-strip-text">
+            <p class="section-label">Für jeden Anlass</p>
+            <h1 class="section-title">Wir kochen & backen für Ihr <em>Event</em></h1>
+        </div>
+    </div>
+    <div class="events-header">
+        <p class="section-label">Unser Angebot</p>
+        <h2 class="section-title">Von der <em>Torte</em> bis zum warmen Gericht</h2>
+        <p class="body">Egal ob Freude oder Trauer, klein oder groß, wir bereiten das Essen für Ihr nächstes Event
+            liebevoll und frisch zu. Von kunstvoll dekorierten Torten über süßes Gebäck bis hin zu
+            warmen Speisen: bei uns bekommen Sie alles aus einer Hand.</p>
+        <p class="body">Wir begleiten Hochzeiten, Geburtstagsfeiern, Firmenfeiern, Beerdigungen, Taufen und viele
+            weitere Anlässe. Immer mit dem gleichen Anspruch an Qualität und Herzlichkeit.</p>
+        <div class="events-anlass-list">
+            <span class="events-anlass">Hochzeiten</span>
+            <span class="events-anlass">Geburtstage</span>
+            <span class="events-anlass">Beerdigungen</span>
+            <span class="events-anlass">Firmenfeiern</span>
+            <span class="events-anlass">Taufen</span>
+            <span class="events-anlass">Jubiläen</span>
+            <span class="events-anlass">Und mehr …</span>
+        </div>
+    </div>
+
+    <div class="events-photo-grid">
+        <img src="Fotos/events/events1.PNG" alt="" class="ev-slide" />
+        <img src="Fotos/events/events2.jpg" alt="" class="ev-slide" />
+        <img src="Fotos/events/events3.jpg" alt="" class="ev-slide" />
+    </div>
+
+    <div class="events-cta">
+        <p>Bereit, Ihren Event unvergesslich zu machen?</p>
+        <a class="btn" href="kontakt.html">Jetzt anfragen</a>
+    </div>
+    <div style="height:4rem;"></div>
+
+    <footer>
+        <em>Bäckerei Alisa</em>
+        Die etwas andere Bäckerei &nbsp;·&nbsp; © 2026 &nbsp;·&nbsp; Alle Rechte vorbehalten
+        <br><br><span style="opacity:0.5;">
+            <a href="rechtliches/impressum.html" style="color:inherit;text-decoration:none;">Impressum</a>
+            &nbsp;·&nbsp;
+            <a href="rechtliches/datenschutz.html" style="color:inherit;text-decoration:none;">Datenschutz</a>
+        </span>
+    </footer>
+</body>
+
+</html>

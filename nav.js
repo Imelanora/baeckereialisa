@@ -17,7 +17,7 @@
 <nav id="main-nav">
     <div class="nav-inner">
         <a class="nav-logo" href="${base}index.html">
-            <img src="${base}logo.png" alt="Bäckerei Alisa" style="height:70px;width:auto;display:block;" />
+            <img src="${base}logo.png" alt="Bäckerei Alisa" style="height:120px;width:auto;display:block;" />
         </a>
         <ul class="nav-links">
             ${pages.map(p => `

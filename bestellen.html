@@ -354,14 +354,14 @@
                     </div>
                     <div class="flavor-error-msg">Bitte mindestens eine Geschmacksrichtung auswählen.</div>
                     <div class="anfrage-field" id="anfrage-field">
-                        <textarea placeholder="Beschreiben Sie Ihren Wunschgeschmack …"
+                        <textarea id="f-anfrage-text" placeholder="Beschreiben Sie Ihren Wunschgeschmack …"
                             style="margin-top:.5rem;"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group full">
                     <label>Weitere Wünsche &amp; Vorstellungen</label>
-                    <textarea placeholder="Design, Farben, Besonderheiten …"></textarea>
+                    <textarea id="f-wuensche" placeholder="Design, Farben, Besonderheiten …"></textarea>
                 </div>
 
                 <div class="form-group full" style="margin-top:.5rem;">
@@ -434,7 +434,53 @@
             }
 
             if (!valid) return;
-            alert('Vielen Dank! Wir melden uns bald bei Ihnen. 🎂');
+
+            const flavors = Array.from(flavorsChecked).map(cb => cb.value).join(', ');
+            const anfrageText = document.getElementById('anfrage-cb').checked
+                ? document.getElementById('f-anfrage-text').value.trim()
+                : '';
+
+            const payload = {
+                Vorname: document.getElementById('f-vorname').value.trim(),
+                Nachname: document.getElementById('f-nachname').value.trim(),
+                Telefonnummer: document.getElementById('f-tel').value.trim(),
+                Anlass: document.getElementById('f-anlass').value,
+                Abholtermin: document.getElementById('f-datum').value,
+                Portionen: document.getElementById('f-portionen').value,
+                Geschmacksrichtung: flavors,
+                'Wunschgeschmack (Anfrage)': anfrageText,
+                'Weitere Wünsche': document.getElementById('f-wuensche').value.trim(),
+                _subject: 'Neue Tortenbestellung – Bäckerei Alisa',
+                _template: 'table',
+                _captcha: 'false'
+            };
+
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.textContent = 'Wird gesendet …';
+
+            fetch('https://formsubmit.co/ajax/baeckereialisa@outlook.de', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+                .then(res => res.json().then(data => ({ ok: res.ok, data })))
+                .then(({ ok, data }) => {
+                    if (!ok || data.success !== 'true') throw new Error(data.message || 'Sendefehler');
+                    alert('Vielen Dank! Wir melden uns bald bei Ihnen. 🎂');
+                    document.querySelectorAll('.bestellen-wrap input, .bestellen-wrap select, .bestellen-wrap textarea').forEach(el => {
+                        if (el.type === 'checkbox') el.checked = false;
+                        else el.value = '';
+                    });
+                    document.getElementById('anfrage-field').classList.remove('visible');
+                })
+                .catch(() => {
+                    alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder rufen Sie uns an.');
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.textContent = 'Anfrage absenden';
+                });
         });
     </script>
 

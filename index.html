@@ -111,31 +111,19 @@
         }
 
         .home-story {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            min-height: 60vh;
-        }
-
-        .story-img {
-            overflow: hidden;
-            min-height: 400px;
-            background: var(--brown-deep);
-        }
-
-        .story-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
+            background: var(--bg2);
         }
 
         .story-text-wrap {
-            background: var(--bg2);
-            padding: 5rem 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 5.5rem 2rem;
+            text-align: center;
+        }
+
+        .story-text-wrap .divider-line {
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .story-p {
@@ -313,15 +301,6 @@
                 min-width: 0;
             }
 
-            .home-story {
-                grid-template-columns: 1fr;
-            }
-
-            .story-img {
-                height: 300px;
-                min-height: unset;
-            }
-
             .story-text-wrap {
                 padding: 3rem 1.5rem;
             }
@@ -474,13 +453,9 @@
     </div>
 
     <div class="home-story">
-        <div class="story-img">
-            <img src="bakery.webp" width="1400" height="1050" loading="lazy" decoding="async"
-                alt="Bäckerei Alisa – Tortenauswahl im Kühlregal" />
-        </div>
         <div class="story-text-wrap">
             <p class="section-label">Unsere Geschichte</p>
-            <h2 class="section-title">Backen mit<br><em>Herz & Seele</em></h2>
+            <h2 class="section-title">Backen mit <em>Herz & Seele</em></h2>
             <div class="divider-line"></div>
             <p class="story-p">Was einst als kleine Leidenschaft in der eigenen Küche begann, ist heute ein
                 familiärer Handwerksbetrieb, der für seine außergewöhnlichen Torten bekannt ist. Als

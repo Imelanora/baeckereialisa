@@ -133,8 +133,6 @@
                 <img src="Fotos/showroom/torte1.webp" decoding="async" alt="" class="sr-slide" />
                 <img src="Fotos/showroom/torte2.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
                 <img src="Fotos/showroom/torte3.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte4.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte5.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
                 <img src="Fotos/showroom/torte6.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
                 <img src="Fotos/showroom/torte7.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
                 <img src="Fotos/showroom/torte8.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
@@ -148,7 +146,7 @@
             const slides = document.querySelectorAll('.sr-slide');
             const dotsWrap = document.getElementById('sr-dots');
             let cur = 0;
-                if (slides[1]) slides[1].loading = 'eager';
+            if (slides[1]) slides[1].loading = 'eager';
             slides.forEach((_, i) => {
                 const d = document.createElement('button');
                 d.className = 'sr-dots-dot' + (i === 0 ? ' active' : '');
@@ -161,7 +159,7 @@
                 cur = (n + slides.length) % slides.length;
                 document.querySelector('.sr-slide-track').style.transform = `translateX(-${cur * 100}%)`;
                 dotsWrap.children[cur].classList.add('active');
-                    slides[(cur + 1) % slides.length].loading = 'eager';
+                slides[(cur + 1) % slides.length].loading = 'eager';
             }
             setInterval(() => go(cur + 1), 5000);
         })();

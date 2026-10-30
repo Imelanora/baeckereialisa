@@ -21,7 +21,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=2" />
     <style>
         .menu-wrap {
             max-width: 1100px;
@@ -104,6 +104,36 @@
             font-size: .85rem;
             line-height: 1.7;
             color: var(--brown-dark);
+        }
+
+        .menu-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e8d9c5;
+        }
+
+        .menu-nav a {
+            font-size: .68rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--brown);
+            border: 1px solid var(--brown-mid);
+            padding: .5rem 1rem;
+            transition: background .2s, color .2s;
+        }
+
+        .menu-nav a:hover {
+            background: var(--brown);
+            border-color: var(--brown);
+            color: #fff;
+        }
+
+        .menu-section {
+            scroll-margin-top: 170px;
         }
 
         /* FOOD PHOTO */
@@ -273,7 +303,7 @@
 <body>
     <script src="nav.js"></script>
 
-    <div class="page-hero-strip" style="margin-top:72px;">
+    <div class="page-hero-strip" style="margin-top:72px;--hero-img:url('Fotos/laden/laden3.webp');background-position:center 45%;">
         <div class="page-hero-strip-text">
             <p class="section-label">Preise & Speisen</p>
             <h1 class="section-title"><em>Speisekarte</em></h1>
@@ -281,12 +311,28 @@
     </div>
 
     <div class="menu-wrap">
-        <p style="font-size:.85rem;line-height:2;opacity:.75;max-width:560px;margin-bottom:2.5rem;">
+        <p style="font-size:.85rem;line-height:2;opacity:.75;max-width:560px;margin-bottom:1.5rem;">
             Alle Preise in Euro inkl. MwSt. Allergene auf Anfrage oder siehe Legende.
         </p>
+        <div class="menu-nav" role="navigation" aria-label="Kategorien">
+            <a href="#fruehstueck">Frühstück</a>
+            <a href="#balkan-fruehstueck">Balkan Frühstück</a>
+            <a href="#ruehrei">Rührei</a>
+            <a href="#burger">Burger</a>
+            <a href="#cevapcici">Ćevapčići</a>
+            <a href="#baguette">Baguette</a>
+            <a href="#suppen">Suppen</a>
+            <a href="#zum-dazubestellen">Zum Dazubestellen</a>
+            <a href="#salat">Salat</a>
+            <a href="#bowls">Bowls</a>
+            <a href="#dessert">Dessert</a>
+            <a href="#kalte-getraenke">Kalte Getränke</a>
+            <a href="#heisse-getraenke">Heiße Getränke</a>
+        </div>
+
 
         <!-- FRÜHSTÜCK -->
-        <div class="menu-section">
+        <div class="menu-section" id="fruehstueck">
             <div class="menu-section-title">Frühstück</div>
             <div class="menu-section-inner no-img">
                 <div class="menu-cols">
@@ -338,7 +384,7 @@
         </div>
 
         <!-- BALKAN FRÜHSTÜCK -->
-        <div class="menu-section">
+        <div class="menu-section" id="balkan-fruehstueck">
             <div class="menu-section-title">Balkan Frühstück</div>
             <div class="menu-section-inner no-img">
                 <div class="menu-cols">
@@ -411,7 +457,7 @@
         </div>
 
         <!-- RÜHREI -->
-        <div class="menu-section">
+        <div class="menu-section" id="ruehrei">
             <div class="menu-section-title">Rührei</div>
             <div class="menu-section-inner no-img">
                 <div>
@@ -430,7 +476,7 @@
         </div>
 
         <!-- BURGER -->
-        <div class="menu-section">
+        <div class="menu-section" id="burger">
             <div class="menu-section-title">Burger</div>
             <div class="menu-section-inner no-img">
                 <div>
@@ -459,7 +505,7 @@
         </div>
 
         <!-- ĆEVAPČIĆI -->
-        <div class="menu-section">
+        <div class="menu-section" id="cevapcici">
             <div class="menu-section-title">Ćevapčići</div>
             <div class="menu-section-inner no-img">
                 <div>
@@ -483,7 +529,7 @@
         </div>
 
         <!-- BAGUETTE -->
-        <div class="menu-section">
+        <div class="menu-section" id="baguette">
             <div class="menu-section-title">Baguette</div>
             <div class="menu-section-inner no-img">
                 <div class="menu-cols">
@@ -520,7 +566,7 @@
         </div>
 
         <!-- SUPPEN -->
-        <div class="menu-section">
+        <div class="menu-section" id="suppen">
             <div class="menu-section-title">Suppen</div>
             <div class="menu-section-inner no-img">
                 <div class="menu-cols">
@@ -541,7 +587,7 @@
         </div>
 
         <!-- ZUM DAZUBESTELLEN -->
-        <div class="menu-section">
+        <div class="menu-section" id="zum-dazubestellen">
             <div class="menu-section-title">Zum Dazubestellen</div>
             <div class="menu-section-inner no-img">
                 <div class="menu-cols">
@@ -578,7 +624,7 @@
         </div>
 
         <!-- SALAT -->
-        <div class="menu-section">
+        <div class="menu-section" id="salat">
             <div class="menu-section-title">Salat</div>
             <div class="menu-section-inner no-img">
                 <div class="menu-cols">
@@ -630,7 +676,7 @@
         </div>
 
         <!-- BOWLS -->
-        <div class="menu-section">
+        <div class="menu-section" id="bowls">
             <div class="menu-section-title">Bowls</div>
             <div class="menu-section-inner no-img">
                 <div>
@@ -654,7 +700,7 @@
         </div>
 
         <!-- DESSERT -->
-        <div class="menu-section">
+        <div class="menu-section" id="dessert">
             <div class="menu-section-title">Dessert</div>
             <div class="menu-section-inner no-img">
                 <div class="menu-cols">
@@ -708,7 +754,7 @@
         </div>
 
         <!-- KALTE GETRÄNKE -->
-        <div class="menu-section">
+        <div class="menu-section" id="kalte-getraenke">
             <div class="menu-section-title">Kalte Getränke</div>
             <div class="menu-section-inner no-img">
                 <div class="menu-cols">
@@ -759,7 +805,7 @@
         </div>
 
         <!-- HEISSE GETRÄNKE -->
-        <div class="menu-section">
+        <div class="menu-section" id="heisse-getraenke">
             <div class="menu-section-title">Heiße Getränke</div>
             <div class="menu-section-inner no-img">
                 <div>
@@ -897,14 +943,41 @@
         Bei schweren Allergien bitte persönlich Rücksprache halten.
     </p>
 
-    <footer>
-        <em>Bäckerei Alisa</em>
-        Die etwas andere Bäckerei &nbsp;·&nbsp; © 2026 &nbsp;·&nbsp; Alle Rechte vorbehalten
-        <br><br><span style="opacity:0.5;">
-            <a href="rechtliches/impressum.html" style="color:inherit;text-decoration:none;">Impressum</a>
-            &nbsp;·&nbsp;
-            <a href="rechtliches/datenschutz.html" style="color:inherit;text-decoration:none;">Datenschutz</a>
-        </span>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col footer-brand">
+                <em>Bäckerei Alisa</em>
+                <p>Die etwas andere Bäckerei – handgemachte Torten, frisches Gebäck und Balkan-Spezialitäten.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/baeckereialisa_/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+                    <a href="https://www.facebook.com/Alisa.Oberhausen" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 21v-8h3l.5-3.5H14V7.8c0-1 .4-1.8 1.8-1.8H18V3.1A24 24 0 0 0 15.3 3C12.7 3 11 4.6 11 7.4v2.1H8V13h3v8"/></svg></a>
+                    <a href="https://www.tiktok.com/@beackerei_alisa" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 4.8"/></svg></a>
+                    <a href="https://wa.me/4915772519649" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4l-4.5 1.1z"/><path d="M9 8.5c.2 3.2 2.9 6.1 6.3 6.5l1-1.4-1.9-1-.9.9a5 5 0 0 1-2.6-2.6l.9-.9-1-1.9L9 8.5z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Oberhausen</h4>
+                <p>Dorstener Straße 550<br>46119 Oberhausen</p>
+                <p>Mo – Fr 06:00 – 17:30<br>Sa & So 08:00 – 16:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Bottrop</h4>
+                <p>Gladbecker Straße 189<br>46240 Bottrop</p>
+                <p>Di – Fr 06:00 – 17:30<br>Sa & So 08:00 – 16:00<br>Mo geschlossen</p>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p><a href="tel:+4915772519649">+49 157 72519649</a></p>
+                <p><a href="bestellen.html">Torte anfragen</a><br><a href="kontakt.html">Anfahrt</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Bäckerei Alisa
+            <span>·</span>
+            <a href="rechtliches/impressum.html">Impressum</a>
+            <span>·</span>
+            <a href="rechtliches/datenschutz.html">Datenschutz</a>
+        </div>
     </footer>
 </body>
 

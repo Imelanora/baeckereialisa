@@ -21,7 +21,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=2" />
     <style>
         .flavors-wrap {
             background: var(--brown-deep);
@@ -63,6 +63,66 @@
         .flavor-pill:hover {
             opacity: 1;
             background: rgba(196, 168, 130, .15);
+        }
+
+        .sr-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .5);
+            background: rgba(44, 26, 10, .45);
+            color: #fff;
+            font-size: 1.6rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: background .2s;
+        }
+
+        .sr-arrow:hover {
+            background: rgba(44, 26, 10, .8);
+        }
+
+        .sr-prev {
+            left: 1rem;
+        }
+
+        .sr-next {
+            right: 1rem;
+        }
+
+        .sr-cta {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .sr-cta .section-title {
+            text-align: center;
+        }
+
+        .sr-cta-text {
+            font-size: .9rem;
+            line-height: 2;
+            opacity: .8;
+            margin-top: 1rem;
+        }
+
+        .sr-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .sr-cta-buttons .btn {
+            min-width: 200px;
+            text-align: center;
         }
 
         .sr-slide-wrap {
@@ -126,7 +186,7 @@
 <body>
     <script src="nav.js"></script>
 
-    <div class="page-hero-strip" style="margin-top:72px;">
+    <div class="page-hero-strip" style="margin-top:72px;--hero-img:url('Fotos/laden/laden2.webp');background-position:center 30%;">
         <div class="page-hero-strip-text">
             <p class="section-label">Unsere Kreationen</p>
             <h1 class="section-title">Der <em>Showroom</em></h1>
@@ -151,6 +211,8 @@
                 <img src="Fotos/showroom/torte10.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
                 <img src="Fotos/showroom/torte11.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
             </div>
+            <button class="sr-arrow sr-prev" id="sr-prev" aria-label="Vorheriges Bild">‹</button>
+            <button class="sr-arrow sr-next" id="sr-next" aria-label="Nächstes Bild">›</button>
             <div class="sr-dots-dots" id="sr-dots"></div>
         </div>
     </div>
@@ -174,7 +236,10 @@
                 dotsWrap.children[cur].classList.add('active');
                 slides[(cur + 1) % slides.length].loading = 'eager';
             }
-            setInterval(() => go(cur + 1), 5000);
+            let timer = setInterval(() => go(cur + 1), 5000);
+            const restart = () => { clearInterval(timer); timer = setInterval(() => go(cur + 1), 5000); };
+            document.getElementById('sr-prev').onclick = () => { go(cur - 1); restart(); };
+            document.getElementById('sr-next').onclick = () => { go(cur + 1); restart(); };
         })();
     </script>
     <div class="flavors-wrap" style="margin-top:3rem;">
@@ -199,14 +264,52 @@
         </div>
     </div>
 
-    <footer>
-        <em>Bäckerei Alisa</em>
-        Die etwas andere Bäckerei &nbsp;·&nbsp; © 2026 &nbsp;·&nbsp; Alle Rechte vorbehalten
-        <br><br><span style="opacity:0.5;">
-            <a href="rechtliches/impressum.html" style="color:inherit;text-decoration:none;">Impressum</a>
-            &nbsp;·&nbsp;
-            <a href="rechtliches/datenschutz.html" style="color:inherit;text-decoration:none;">Datenschutz</a>
-        </span>
+    <div class="sr-cta">
+        <p class="section-label">Ihre Wunschtorte</p>
+        <h2 class="section-title">Lassen Sie uns <em>gemeinsam</em> etwas Besonderes kreieren</h2>
+        <p class="sr-cta-text">Erzählen Sie uns von Ihrem Anlass, Ihren Lieblingsfarben und Geschmäckern –
+            wir melden uns innerhalb von 48 Stunden mit einem Vorschlag.</p>
+        <div class="sr-cta-buttons">
+            <a class="btn btn-fill" href="bestellen.html">Torte anfragen</a>
+            <a class="btn btn-outline-dark" href="https://wa.me/4915772519649" target="_blank" rel="noopener">Per WhatsApp</a>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col footer-brand">
+                <em>Bäckerei Alisa</em>
+                <p>Die etwas andere Bäckerei – handgemachte Torten, frisches Gebäck und Balkan-Spezialitäten.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/baeckereialisa_/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+                    <a href="https://www.facebook.com/Alisa.Oberhausen" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 21v-8h3l.5-3.5H14V7.8c0-1 .4-1.8 1.8-1.8H18V3.1A24 24 0 0 0 15.3 3C12.7 3 11 4.6 11 7.4v2.1H8V13h3v8"/></svg></a>
+                    <a href="https://www.tiktok.com/@beackerei_alisa" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 4.8"/></svg></a>
+                    <a href="https://wa.me/4915772519649" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4l-4.5 1.1z"/><path d="M9 8.5c.2 3.2 2.9 6.1 6.3 6.5l1-1.4-1.9-1-.9.9a5 5 0 0 1-2.6-2.6l.9-.9-1-1.9L9 8.5z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Oberhausen</h4>
+                <p>Dorstener Straße 550<br>46119 Oberhausen</p>
+                <p>Mo – Fr 06:00 – 17:30<br>Sa & So 08:00 – 16:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Bottrop</h4>
+                <p>Gladbecker Straße 189<br>46240 Bottrop</p>
+                <p>Di – Fr 06:00 – 17:30<br>Sa & So 08:00 – 16:00<br>Mo geschlossen</p>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p><a href="tel:+4915772519649">+49 157 72519649</a></p>
+                <p><a href="bestellen.html">Torte anfragen</a><br><a href="kontakt.html">Anfahrt</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Bäckerei Alisa
+            <span>·</span>
+            <a href="rechtliches/impressum.html">Impressum</a>
+            <span>·</span>
+            <a href="rechtliches/datenschutz.html">Datenschutz</a>
+        </div>
     </footer>
 </body>
 

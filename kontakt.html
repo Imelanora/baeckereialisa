@@ -26,54 +26,154 @@
         .kontakt-wrap {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 2.5rem 4rem 5rem;
+            padding: 3rem 4rem 4rem;
+        }
+
+        .kontakt-intro {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .kontakt-intro-text {
+            font-size: .9rem;
+            line-height: 2;
+            color: var(--text);
+            opacity: .8;
+            max-width: 520px;
+            margin-top: 1rem;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: .8rem;
+            flex-wrap: wrap;
+        }
+
+        .icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+        }
+
+        .icon-btn svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
         }
 
         .standorte-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .standort {
-            background: var(--bg);
+            background: #fff;
             border: 1px solid #e8d9c5;
-            padding: 2rem 2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(44, 26, 10, .06);
+            transition: box-shadow .3s, transform .3s;
+        }
+
+        .standort:hover {
+            box-shadow: 0 16px 40px rgba(44, 26, 10, .11);
+            transform: translateY(-3px);
+        }
+
+        .standort-head {
+            background: var(--brown-dark);
+            color: var(--brown-light);
+            padding: 1.6rem 2rem 1.4rem;
+            position: relative;
+        }
+
+        .standort-num {
+            font-size: .6rem;
+            letter-spacing: .35em;
+            text-transform: uppercase;
+            color: var(--brown-mid);
         }
 
         .standort-name {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.7rem;
             font-style: italic;
-            color: var(--brown-dark);
-            margin-bottom: 1.5rem;
-            padding-bottom: .8rem;
-            border-bottom: 1px solid #e8d9c5;
+            font-weight: 400;
+            margin-top: .3rem;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 1.6rem;
+            right: 2rem;
+            font-size: .62rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            padding: .35rem .8rem;
+            border: 1px solid rgba(196, 168, 130, .5);
+            color: var(--brown-mid);
+            display: none;
+            align-items: center;
+            gap: .45rem;
+        }
+
+        .status-badge.visible {
+            display: inline-flex;
+        }
+
+        .status-badge::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .status-badge.open {
+            color: #9fd3a0;
+            border-color: rgba(159, 211, 160, .5);
+        }
+
+        .standort-body {
+            padding: 1.2rem 2rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .kontakt-item {
             display: flex;
             gap: 1rem;
             align-items: flex-start;
-            padding: .9rem 0;
+            padding: 1rem 0;
             border-bottom: 1px solid #f0e6d8;
         }
 
-        .kontakt-item:last-child {
-            border-bottom: none;
-        }
-
         .kontakt-icon {
-            width: 28px;
-            height: 28px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg2);
+            color: var(--brown);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: .95rem;
             flex-shrink: 0;
-            color: var(--brown);
-            margin-top: 1px;
+        }
+
+        .kontakt-icon svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        .kontakt-item > div:last-child {
+            flex: 1;
         }
 
         .kontakt-label {
@@ -81,47 +181,13 @@
             letter-spacing: .2em;
             text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: .2rem;
+            margin-bottom: .25rem;
         }
 
         .kontakt-value {
-            font-size: .85rem;
+            font-size: .9rem;
             color: var(--text);
             line-height: 1.65;
-        }
-
-        .map-box {
-            width: 100%;
-            height: 200px;
-            background: var(--bg2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #e8d9c5;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: var(--muted);
-            font-size: .85rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-strip {
-            max-width: 1100px;
-            margin: 2.5rem auto 0;
-            padding: 0 4rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .social-strip p {
-            font-size: .82rem;
-            color: var(--muted);
-        }
-
-        .social-strip {
-            flex-wrap: wrap;
-            gap: 1rem 2rem;
         }
 
         .kontakt-link {
@@ -136,20 +202,195 @@
             border-color: var(--brown-dark);
         }
 
+        .hours {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .88rem;
+        }
+
+        .hours td {
+            padding: .3rem .5rem;
+        }
+
+        .hours td:first-child {
+            padding-left: 0;
+            color: var(--muted);
+        }
+
+        .hours td:last-child {
+            text-align: right;
+            padding-right: 0;
+            white-space: nowrap;
+        }
+
+        .hours tr.today td {
+            color: var(--brown-dark);
+            font-weight: 500;
+        }
+
+        .hours tr.today td:first-child::after {
+            content: ' · heute';
+            font-size: .7rem;
+            letter-spacing: .1em;
+            color: var(--brown);
+        }
+
+        .hours .closed {
+            color: #b0503c;
+        }
+
+        .standort-map {
+            margin-top: 1.4rem;
+            border: 1px solid #e8d9c5;
+            line-height: 0;
+        }
+
+        .standort-map iframe {
+            width: 100%;
+            height: 230px;
+            border: 0;
+            filter: sepia(.25) saturate(.9);
+        }
+
+        .standort-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .7rem;
+            margin-top: auto;
+            padding-top: 1.4rem;
+        }
+
+        .standort-actions .btn {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* SOCIAL */
+        .social-section {
+            background: var(--brown-dark);
+            color: var(--brown-light);
+            padding: 4.5rem 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .social-section .section-label {
+            color: var(--brown-mid);
+        }
+
+        .social-section .section-title {
+            color: var(--brown-light);
+        }
+
+        .social-section p.social-text {
+            font-size: .88rem;
+            line-height: 1.9;
+            opacity: .75;
+            max-width: 480px;
+            margin: 1rem auto 0;
+        }
+
+        .social-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 900px;
+            margin: 2.5rem auto 0;
+        }
+
+        .social-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .8rem;
+            padding: 1.6rem 1rem 1.4rem;
+            border: 1px solid rgba(196, 168, 130, .3);
+            color: var(--brown-light);
+            text-decoration: none;
+            transition: background .25s, border-color .25s, transform .25s;
+        }
+
+        .social-btn:hover {
+            background: rgba(196, 168, 130, .12);
+            border-color: var(--brown-mid);
+            transform: translateY(-3px);
+        }
+
+        .social-btn svg {
+            width: 28px;
+            height: 28px;
+            color: var(--brown-mid);
+        }
+
+        .social-btn-name {
+            font-size: .7rem;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+        }
+
+        .social-btn-handle {
+            font-size: .78rem;
+            opacity: .6;
+            margin-top: -.4rem;
+        }
+
+        @media(max-width:860px) {
+            .social-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media(max-width:720px) {
             .kontakt-wrap {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
+                padding: 2rem 1.5rem 3rem;
             }
 
             .standorte-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
+                margin-top: 2rem;
             }
 
-            .social-strip {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
+            .standort-head,
+            .standort-body {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
+            .status-badge {
+                position: static;
+                margin-top: .8rem;
+            }
+
+            .quick-actions {
+                width: 100%;
+            }
+
+            .quick-actions .btn {
+                flex: 1;
+            }
+
+            .social-section {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .hours {
+                font-size: .82rem;
+            }
+
+            .hours td:first-child {
+                white-space: nowrap;
+            }
+
+            .standort-actions .btn {
+                letter-spacing: .12em;
+                padding-left: .5rem;
+                padding-right: .5rem;
+                white-space: nowrap;
+            }
+
+            .social-buttons {
+                gap: .7rem;
             }
         }
     </style>
@@ -165,93 +406,160 @@
         </div>
     </div>
     <div class="kontakt-wrap">
-        <p class="section-label" style="margin-top:2rem;">Unsere zwei Standorte</p>
-        <h2 class="section-title">Wir sind <em>zweimal</em> für Sie da</h2>
+        <div class="kontakt-intro">
+            <div>
+                <p class="section-label">Unsere zwei Standorte</p>
+                <h2 class="section-title">Wir sind <em>zweimal</em> für Sie da</h2>
+                <p class="kontakt-intro-text">Ob Frühstück, Burek zum Mitnehmen oder die Torte für Ihren großen Tag –
+                    rufen Sie uns an, schreiben Sie uns per WhatsApp oder kommen Sie einfach vorbei.</p>
+            </div>
+            <div class="quick-actions">
+                <a class="btn btn-outline-dark icon-btn" href="tel:+4915772519649"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Anrufen</a>
+                <a class="btn btn-fill icon-btn" href="https://wa.me/4915772519649" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4l-4.5 1.1z"/><path d="M9 8.5c.2 3.2 2.9 6.1 6.3 6.5l1-1.4-1.9-1-.9.9a5 5 0 0 1-2.6-2.6l.9-.9-1-1.9L9 8.5z"/></svg>WhatsApp</a>
+            </div>
+        </div>
+
         <div class="standorte-grid">
-
-            <div class="standort">
-                <p class="standort-name">Standort 1 – Oberhausen</p>
-
-                <div class="kontakt-item">
-                    <div class="kontakt-icon">📍</div>
-                    <div>
-                        <p class="kontakt-label">Adresse</p>
-                        <p class="kontakt-value">Dorstener Straße 550<br>46119 Oberhausen</p>
+            <div class="standort" data-hours='{"0":["08:00","16:00"],"1":["06:00","17:30"],"2":["06:00","17:30"],"3":["06:00","17:30"],"4":["06:00","17:30"],"5":["06:00","17:30"],"6":["08:00","16:00"]}'>
+                <div class="standort-head">
+                    <p class="standort-num">Standort 1</p>
+                    <h3 class="standort-name">Oberhausen</h3>
+                    <span class="status-badge"></span>
+                </div>
+                <div class="standort-body">
+                    <div class="kontakt-item">
+                        <div class="kontakt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+                        <div>
+                            <p class="kontakt-label">Adresse</p>
+                            <p class="kontakt-value">Dorstener Straße 550<br>46119 Oberhausen</p>
+                        </div>
+                    </div>
+                    <div class="kontakt-item">
+                        <div class="kontakt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+                        <div>
+                            <p class="kontakt-label">Telefon</p>
+                            <p class="kontakt-value"><a class="kontakt-link" href="tel:+4915772519649">+49 157 72519649</a></p>
+                        </div>
+                    </div>
+                    <div class="kontakt-item">
+                        <div class="kontakt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+                        <div>
+                            <p class="kontakt-label">Öffnungszeiten</p>
+                            <table class="hours">
+                            <tr data-days="1-5"><td>Mo – Fr</td><td>06:00 – 17:30 Uhr</td></tr>
+                            <tr data-days="6,0"><td>Sa & So</td><td>08:00 – 16:00 Uhr</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="standort-actions">
+                        <a class="btn btn-fill icon-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=B%C3%A4ckerei+Alisa+Dorstener+Stra%C3%9Fe+550+46119+Oberhausen" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Route planen</a>
+                        <a class="btn btn-outline-dark icon-btn" href="tel:+4915772519649"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Anrufen</a>
+                    </div>
+                    <div class="standort-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.713826267281!2d6.884034100000001!3d51.5368085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8eb8ed5e6df95%3A0x7b862a5d59146408!2sB%C3%A4ckerei%20Alisa!5e0!3m2!1sde!2sde!4v1780952116619!5m2!1sde!2sde" title="Karte Oberhausen" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-
-                <div class="kontakt-item">
-                    <div class="kontakt-icon">📞</div>
-                    <div>
-                        <p class="kontakt-label">Telefon</p>
-                        <p class="kontakt-value"><a class="kontakt-link" href="tel:+4915772519649">+49 157 72519649</a></p>
-                    </div>
-                </div>
-
-
-                <div class="kontakt-item">
-                    <div class="kontakt-icon">🕐</div>
-                    <div>
-                        <p class="kontakt-label">Öffnungszeiten</p>
-                        <p class="kontakt-value"><br>Mo – Fr: 06:00 – 17:30 Uhr<br>Sa & So: 08:00 – 16:00 Uhr
-                        </p>
-                    </div>
-                </div>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.713826267281!2d6.884034100000001!3d51.5368085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8eb8ed5e6df95%3A0x7b862a5d59146408!2sB%C3%A4ckerei%20Alisa!5e0!3m2!1sde!2sde!4v1780952116619!5m2!1sde!2sde"
-                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
-            <div class="standort">
-                <p class="standort-name">Standort 2 – Bottrop</p>
-
-                <div class="kontakt-item">
-                    <div class="kontakt-icon">📍</div>
-                    <div>
-                        <p class="kontakt-label">Adresse</p>
-                        <p class="kontakt-value">Gladbecker Straße 189<br>46240 Bottrop</p>
+            <div class="standort" data-hours='{"0":["08:00","16:00"],"1":null,"2":["06:00","17:30"],"3":["06:00","17:30"],"4":["06:00","17:30"],"5":["06:00","17:30"],"6":["08:00","16:00"]}'>
+                <div class="standort-head">
+                    <p class="standort-num">Standort 2</p>
+                    <h3 class="standort-name">Bottrop</h3>
+                    <span class="status-badge"></span>
+                </div>
+                <div class="standort-body">
+                    <div class="kontakt-item">
+                        <div class="kontakt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+                        <div>
+                            <p class="kontakt-label">Adresse</p>
+                            <p class="kontakt-value">Gladbecker Straße 189<br>46240 Bottrop</p>
+                        </div>
+                    </div>
+                    <div class="kontakt-item">
+                        <div class="kontakt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+                        <div>
+                            <p class="kontakt-label">Telefon</p>
+                            <p class="kontakt-value"><a class="kontakt-link" href="tel:+4915772519649">+49 157 72519649</a></p>
+                        </div>
+                    </div>
+                    <div class="kontakt-item">
+                        <div class="kontakt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+                        <div>
+                            <p class="kontakt-label">Öffnungszeiten</p>
+                            <table class="hours">
+                            <tr data-days="1"><td>Mo</td><td class="closed">geschlossen</td></tr>
+                            <tr data-days="2-5"><td>Di – Fr</td><td>06:00 – 17:30 Uhr</td></tr>
+                            <tr data-days="6,0"><td>Sa & So</td><td>08:00 – 16:00 Uhr</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="standort-actions">
+                        <a class="btn btn-fill icon-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=B%C3%A4ckerei+Alisa+Gladbecker+Stra%C3%9Fe+189+46240+Bottrop" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Route planen</a>
+                        <a class="btn btn-outline-dark icon-btn" href="tel:+4915772519649"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Anrufen</a>
+                    </div>
+                    <div class="standort-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.6235207244436!2d6.932594!3d51.5384647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8e90017c54ae5%3A0xed8798e9cebdd2b8!2sB%C3%A4ckerei%20Alisa%20-%20Balkan%20Street%20Food!5e0!3m2!1sde!2sde!4v1780952459966!5m2!1sde!2sde" title="Karte Bottrop" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-
-                <div class="kontakt-item">
-                    <div class="kontakt-icon">📞</div>
-                    <div>
-                        <p class="kontakt-label">Telefon</p>
-                        <p class="kontakt-value"><a class="kontakt-link" href="tel:+4915772519649">+49 157 72519649</a></p>
-                    </div>
-                </div>
-
-
-                <div class="kontakt-item">
-                    <div class="kontakt-icon">🕐</div>
-                    <div>
-                        <p class="kontakt-label">Öffnungszeiten</p>
-                        <p class="kontakt-value">Mo: geschlossen<br>Di – Fr: 06:00 – 17:30 Uhr<br>Sa & So: 08:00 – 16:00
-                            Uhr
-                        </p>
-                    </div>
-                </div>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.6235207244436!2d6.932594!3d51.5384647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8e90017c54ae5%3A0xed8798e9cebdd2b8!2sB%C3%A4ckerei%20Alisa%20-%20Balkan%20Street%20Food!5e0!3m2!1sde!2sde!4v1780952459966!5m2!1sde!2sde"
-                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
 
-    <div class="social-strip">
-        <a class="btn btn-fill whatsapp-btn" href="https://wa.me/4915772519649" target="_blank" rel="noopener">Per WhatsApp schreiben</a>
-        <p>
-            Folgen Sie uns:
-            <a class="kontakt-link" href="https://www.instagram.com/baeckereialisa_/" target="_blank" rel="noopener">Instagram</a>
-            &nbsp;·&nbsp;
-            <a class="kontakt-link" href="https://www.facebook.com/Alisa.Oberhausen" target="_blank" rel="noopener">Facebook</a>
-            &nbsp;·&nbsp;
-            <a class="kontakt-link" href="https://www.tiktok.com/@beackerei_alisa" target="_blank" rel="noopener">TikTok</a>
-        </p>
+    <div class="social-section">
+        <p class="section-label">Social Media</p>
+        <h2 class="section-title">Folgen Sie <em>uns</em></h2>
+        <p class="social-text">Neue Torten, frische Angebote und Einblicke in unsere Backstube –
+            täglich auf unseren Kanälen.</p>
+        <div class="social-buttons">
+            <a class="social-btn" href="https://www.instagram.com/baeckereialisa_/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+                <span class="social-btn-name">Instagram</span>
+                <span class="social-btn-handle">@baeckereialisa_</span>
+            </a>
+            <a class="social-btn" href="https://www.facebook.com/Alisa.Oberhausen" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 21v-8h3l.5-3.5H14V7.8c0-1 .4-1.8 1.8-1.8H18V3.1A24 24 0 0 0 15.3 3C12.7 3 11 4.6 11 7.4v2.1H8V13h3v8"/></svg>
+                <span class="social-btn-name">Facebook</span>
+                <span class="social-btn-handle">Alisa.Oberhausen</span>
+            </a>
+            <a class="social-btn" href="https://www.tiktok.com/@beackerei_alisa" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 4.8"/></svg>
+                <span class="social-btn-name">TikTok</span>
+                <span class="social-btn-handle">@beackerei_alisa</span>
+            </a>
+            <a class="social-btn" href="https://wa.me/4915772519649" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4l-4.5 1.1z"/><path d="M9 8.5c.2 3.2 2.9 6.1 6.3 6.5l1-1.4-1.9-1-.9.9a5 5 0 0 1-2.6-2.6l.9-.9-1-1.9L9 8.5z"/></svg>
+                <span class="social-btn-name">WhatsApp</span>
+                <span class="social-btn-handle">Direkt schreiben</span>
+            </a>
+        </div>
     </div>
-    <div style="height:4rem;"></div>
+
+    <script>
+        (function () {
+            const now = new Date();
+            const day = now.getDay();
+            const mins = now.getHours() * 60 + now.getMinutes();
+            const toMin = t => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+            document.querySelectorAll('.standort').forEach(card => {
+                card.querySelectorAll('.hours tr').forEach(tr => {
+                    const d = tr.dataset.days;
+                    const match = d.includes('-')
+                        ? (([a, b]) => day >= a && day <= b)(d.split('-').map(Number))
+                        : d.split(',').map(Number).includes(day);
+                    if (match) tr.classList.add('today');
+                });
+                const today = JSON.parse(card.dataset.hours)[day];
+                const badge = card.querySelector('.status-badge');
+                if (today && mins >= toMin(today[0]) && mins < toMin(today[1])) {
+                    badge.textContent = 'Jetzt geöffnet';
+                    badge.classList.add('open');
+                } else {
+                    badge.textContent = 'Geschlossen';
+                }
+                badge.classList.add('visible');
+            });
+        })();
+    </script>
 
     <footer>
         <em>Bäckerei Alisa</em>

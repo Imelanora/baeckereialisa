@@ -22,7 +22,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=4" />
     <style>
         .hero {
             position: relative;
@@ -59,7 +59,7 @@
 
         .hero-badge {
             display: inline-block;
-            font-size: .65rem;
+            font-size: .7rem;
             letter-spacing: .4em;
             text-transform: uppercase;
             color: var(--brown-mid);
@@ -70,7 +70,7 @@
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            font-size: clamp(3.8rem, 9vw, 7.5rem);
             font-weight: 400;
             line-height: 1.0;
             letter-spacing: .02em;
@@ -84,9 +84,9 @@
 
         .hero-sub {
             font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             font-style: italic;
-            color: rgba(255, 255, 255, .7);
+            color: rgba(255, 255, 255, .8);
             letter-spacing: .12em;
             margin-bottom: 2.5rem;
         }
@@ -110,95 +110,28 @@
             text-align: center;
         }
 
-        .home-story {
-            background: var(--bg2);
-        }
-
-        .story-text-wrap {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 5.5rem 2rem;
-            text-align: center;
-        }
-
-        .story-text-wrap .divider-line {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+        /* GESCHICHTE */
         .story-p {
-            font-size: .9rem;
+            font-size: 1.05rem;
             line-height: 2;
-            color: var(--text);
             opacity: .8;
-            margin-bottom: 1rem;
+            margin-bottom: 1.1rem;
         }
-
-        .shop-ss-section {
-            background: var(--bg);
-            padding-bottom: 4rem;
-        }
-
-        .shop-ss-section .ss-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .quote-strip {
-            background: var(--brown-dark);
-            color: var(--brown-light);
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .quote-strip blockquote {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.3rem, 3vw, 2rem);
-            font-style: italic;
-            font-weight: 400;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.5;
-            opacity: .92;
-        }
-
-        .quote-strip cite {
-            display: block;
-            margin-top: 1.2rem;
-            font-size: .68rem;
-            letter-spacing: .3em;
-            text-transform: uppercase;
-            color: var(--brown-mid);
-            font-style: normal;
-        }
-
 
         /* ANGEBOT */
-        .offer-section {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4.5rem 2rem 1rem;
-        }
-
-        .offer-head {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
         .offer-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 1.8rem;
+            max-width: 1040px;
+            margin: 0 auto;
         }
 
         .offer-card {
-            background: #fff;
-            border: 1px solid #e8d9c5;
             text-decoration: none;
             color: var(--text);
             display: flex;
             flex-direction: column;
-            box-shadow: 0 10px 30px rgba(44, 26, 10, .06);
             transition: transform .3s, box-shadow .3s;
         }
 
@@ -225,14 +158,15 @@
         }
 
         .offer-body {
-            padding: 1.2rem 1.3rem 1.4rem;
+            padding: 1.5rem 1.6rem 1.7rem;
             display: flex;
             flex-direction: column;
             flex: 1;
+            text-align: center;
         }
 
         .offer-tag {
-            font-size: .6rem;
+            font-size: .62rem;
             letter-spacing: .3em;
             text-transform: uppercase;
             color: var(--muted);
@@ -242,39 +176,54 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-weight: 400;
-            font-size: 1.2rem;
+            font-size: 1.45rem;
             color: var(--brown-dark);
-            margin: .3rem 0 .5rem;
+            margin: .4rem 0 .7rem;
         }
 
         .offer-body p:not(.offer-tag) {
-            font-size: .8rem;
-            line-height: 1.7;
+            font-size: .92rem;
+            line-height: 1.8;
             opacity: .8;
             flex: 1;
         }
 
         .offer-link {
-            margin-top: .9rem;
-            font-size: .68rem;
+            margin-top: 1.2rem;
+            font-size: .7rem;
             letter-spacing: .2em;
             text-transform: uppercase;
             color: var(--brown);
         }
 
+        /* ZITAT */
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--brown-light);
+        }
+
+        .quote-cite {
+            display: block;
+            margin-top: 1.4rem;
+            font-size: .7rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--brown-mid);
+            font-style: normal;
+        }
+
         @media(max-width:860px) {
             .offer-grid {
                 grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 0 auto;
+                max-width: 420px;
             }
         }
 
         @media(max-width:720px) {
-            .offer-section {
-                padding: 3.5rem 1.5rem 0;
-            }
-
             .hero-badge {
                 letter-spacing: .3em;
                 line-height: 2;
@@ -297,12 +246,8 @@
 
             .hero-cta .btn {
                 width: 100%;
-                max-width: 270px;
+                max-width: 280px;
                 min-width: 0;
-            }
-
-            .story-text-wrap {
-                padding: 3rem 1.5rem;
             }
         }
     </style>
@@ -452,11 +397,13 @@
         </div>
     </div>
 
-    <div class="home-story">
-        <div class="story-text-wrap">
-            <p class="section-label">Unsere Geschichte</p>
-            <h2 class="section-title">Backen mit <em>Herz & Seele</em></h2>
-            <div class="divider-line"></div>
+    <section class="section section--alt">
+        <div class="container--narrow" style="text-align:center;">
+            <div class="section-head" style="margin-bottom:2rem;">
+                <p class="section-label">Unsere Geschichte</p>
+                <h2 class="section-title">Backen mit <em>Herz & Seele</em></h2>
+                <div class="divider-line"></div>
+            </div>
             <p class="story-p">Was einst als kleine Leidenschaft in der eigenen Küche begann, ist heute ein
                 familiärer Handwerksbetrieb, der für seine außergewöhnlichen Torten bekannt ist. Als
                 Familienbetrieb legen wir besonderen Wert auf persönliche Beratung, Herzlichkeit und Qualität,
@@ -464,19 +411,21 @@
             <p class="story-p">Jede Torte wird mit größter Sorgfalt und ausschließlich aus hochwertigen Zutaten
                 gefertigt. Kein Stück gleicht dem anderen, denn jede Bestellung ist so einzigartig wie der
                 Anlass selbst.</p>
-            <div style="margin-top:1.5rem;">
+            <div class="cta-buttons">
                 <a class="btn btn-outline-dark" href="showroom.html">Unsere Kreationen ansehen</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="offer-section">
-        <div class="offer-head">
-            <p class="section-label">Was wir für Sie machen</p>
-            <h2 class="section-title">Unser <em>Angebot</em></h2>
-        </div>
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-label">Was wir für Sie machen</p>
+                <h2 class="section-title">Unser <em>Angebot</em></h2>
+                <p class="section-intro">Herzhaft, süß oder für den großen Anlass – bei uns bekommen Sie alles aus einer Hand.</p>
+            </div>
         <div class="offer-grid">
-            <a class="offer-card" href="speisekarte.html">
+            <a class="offer-card card" href="speisekarte.html">
                 <div class="offer-img"><img src="Fotos/essen/cevapcici.webp" alt="Balkan-Spezialitäten" loading="lazy" decoding="async" /></div>
                 <div class="offer-body">
                     <p class="offer-tag">Küche</p>
@@ -485,7 +434,7 @@
                     <span class="offer-link">Zur Speisekarte →</span>
                 </div>
             </a>
-            <a class="offer-card" href="showroom.html">
+            <a class="offer-card card" href="showroom.html">
                 <div class="offer-img"><img style="object-position:center 35%;" src="Fotos/showroom/torte8.webp" alt="Torten nach Wunsch" loading="lazy" decoding="async" /></div>
                 <div class="offer-body">
                     <p class="offer-tag">Torten</p>
@@ -494,7 +443,7 @@
                     <span class="offer-link">Showroom ansehen →</span>
                 </div>
             </a>
-            <a class="offer-card" href="events.html">
+            <a class="offer-card card" href="events.html">
                 <div class="offer-img"><img src="Fotos/events/events3.webp" alt="Für Ihr Event" loading="lazy" decoding="async" /></div>
                 <div class="offer-body">
                     <p class="offer-tag">Catering</p>
@@ -504,128 +453,51 @@
                 </div>
             </a>
         </div>
-    </div>
-
-    <div style="text-align:center;padding:3.5rem 4rem 2rem;">
-        <p class="section-label">Täglich frisch bei uns</p>
-        <h2 class="section-title" style="text-align:center;">Immer in unserem <em>Laden</em></h2>
-        <p style="font-size:.9rem;line-height:2;opacity:.75;max-width:620px;margin:1rem auto 0;">
-            Von liebevoll belegten Brötchen, feinem Gebäck und hausgemachtem Kuchen bis hin zu
-            authentischen Balkanspezialitäten, bei uns erwartet Sie täglich frischer Burek mit
-            verschiedensten Füllungen, herzhafte warme Gerichte und vieles mehr.
-        </p>
-    </div>
-    <div class="ss-inner">
-        <style>
-            .shop-slide-wrap {
-                position: relative;
-                overflow: hidden;
-                max-width: 900px;
-                margin: 0 auto;
-            }
-
-            .shop-slide-track {
-                display: flex;
-                transition: transform .6s cubic-bezier(.4, 0, .2, 1);
-            }
-
-            .shop-slide {
-                min-width: 100%;
-                height: 680px;
-                object-fit: contain;
-                display: block;
-                background: var(--brown-deep);
-            }
-
-            @media(max-width:720px) {
-                .shop-slide {
-                    height: 460px;
-                }
-            }
-
-            .shop-dots-dots {
-                position: absolute;
-                bottom: 1.2rem;
-                left: 50%;
-                transform: translateX(-50%);
-                display: flex;
-                gap: .6rem;
-                z-index: 10;
-            }
-
-            .shop-dots-dot {
-                width: 11px;
-                height: 11px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, .45);
-                cursor: pointer;
-                transition: background .2s, transform .2s;
-                border: 2px solid rgba(255, 255, 255, .6);
-                padding: 0;
-            }
-
-            .shop-dots-dot.active {
-                background: #fff;
-                transform: scale(1.25);
-            }
-        </style>
-        <div class="shop-slide-wrap">
-            <div class="shop-slide-track">
-
-
-                <img src="Fotos/laden/laden4.webp" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden6.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden7.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden10.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden11.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden14.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden15.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden16.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden17.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden20.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden21.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden22.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden23.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-                <img src="Fotos/laden/laden24.webp" loading="lazy" decoding="async" alt="" class="shop-slide" />
-
-
-            </div>
-            <div class="shop-dots-dots" id="shop-dots"></div>
         </div>
-        <script>
-            (function () {
-                const captions = ['', '', '', ''];
-                const slides = document.querySelectorAll('.shop-slide');
-                const dotsWrap = document.getElementById('shop-dots');
-                let cur = 0;
-                if (slides[1]) slides[1].loading = 'eager';
-                slides.forEach((_, i) => {
-                    const d = document.createElement('button');
-                    d.className = 'shop-dots-dot' + (i === 0 ? ' active' : '');
-                    d.setAttribute('aria-label', 'Bild ' + (i + 1));
-                    d.onclick = () => go(i);
-                    dotsWrap.appendChild(d);
-                });
-                function go(n) {
-                    dotsWrap.children[cur].classList.remove('active');
-                    cur = (n + slides.length) % slides.length;
-                    document.querySelector('.shop-slide-track').style.transform = `translateX(-${cur * 100}%)`;
-                    dotsWrap.children[cur].classList.add('active');
-                    slides[(cur + 1) % slides.length].loading = 'eager';
+    </section>
 
-                }
-                setInterval(() => go(cur + 1), 4500);
-            })();
-        </script>
-    </div>
-    </div>
+    <section class="section section--alt">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-label">Täglich frisch bei uns</p>
+                <h2 class="section-title">Immer in unserem <em>Laden</em></h2>
+                <p class="section-intro">Von liebevoll belegten Brötchen, feinem Gebäck und hausgemachtem Kuchen bis hin zu
+                    authentischen Balkanspezialitäten – bei uns erwartet Sie täglich frischer Burek mit
+                    verschiedensten Füllungen, herzhafte warme Gerichte und vieles mehr.</p>
+            </div>
+            <div class="slider" data-interval="4500">
+                <div class="slider-track">
+                <img src="Fotos/laden/laden4.webp" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden6.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden7.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden10.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden11.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden14.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden15.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden16.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden17.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden20.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden21.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden22.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden23.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                <img src="Fotos/laden/laden24.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div style="height:3rem;background:var(--bg);"></div>
+    <section class="section section--dark cta">
+        <div class="container--narrow">
+            <blockquote class="quote">„Jede Torte erzählt eine Geschichte – lassen Sie uns Ihre erzählen.“</blockquote>
+            <cite class="quote-cite">Bäckerei Alisa · Die etwas andere Bäckerei</cite>
+            <div class="cta-buttons">
+                <a class="btn btn-fill" href="bestellen.html">Torte anfragen</a>
+                <a class="btn btn-outline-dark" href="kontakt.html">Besuchen Sie uns</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="quote-strip">
-        <blockquote>„Jede Torte erzählt eine Geschichte, lassen Sie uns Ihre erzählen."</blockquote>
-        <cite>Bäckerei Alisa · Die etwas andere Bäckerei</cite>
-    </div>
+    <script src="slider.js"></script>
 
     <footer class="site-footer">
         <div class="footer-inner">

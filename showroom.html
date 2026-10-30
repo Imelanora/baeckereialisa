@@ -24,289 +24,82 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=3" />
-    <style>
-        .flavors-wrap {
-            background: var(--brown-deep);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .flavors-inner {
-            max-width: 820px;
-            margin: 0 auto;
-        }
-
-        .flavors-wrap .section-label {
-            color: var(--brown-mid);
-        }
-
-        .flavors-wrap .section-title {
-            color: var(--brown-light);
-        }
-
-        .flavors-text {
-            font-size: .88rem;
-            line-height: 1.9;
-            color: var(--brown-light);
-            opacity: .7;
-            max-width: 480px;
-            margin: 0 auto;
-        }
-
-        .flavor-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: .8rem;
-            margin-top: 2.2rem;
-        }
-
-        .flavor-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: .6rem;
-            padding: .75rem 1.4rem;
-            border: 1px solid rgba(196, 168, 130, .35);
-            border-radius: 999px;
-            font-size: .8rem;
-            letter-spacing: .08em;
-            color: var(--brown-light);
-            transition: background .25s, border-color .25s, color .25s;
-        }
-
-        .flavor-pill::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--brown-mid);
-        }
-
-        .flavor-pill:hover {
-            background: rgba(196, 168, 130, .12);
-            border-color: var(--brown-mid);
-        }
-
-        .flavor-pill.special {
-            background: var(--brown-mid);
-            border-color: var(--brown-mid);
-            color: var(--brown-deep);
-            font-weight: 400;
-        }
-
-        .flavor-pill.special::before {
-            background: var(--brown-deep);
-        }
-
-        .sr-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, .5);
-            background: rgba(44, 26, 10, .45);
-            color: #fff;
-            font-size: 1.6rem;
-            line-height: 1;
-            cursor: pointer;
-            transition: background .2s;
-        }
-
-        .sr-arrow:hover {
-            background: rgba(44, 26, 10, .8);
-        }
-
-        .sr-prev {
-            left: 1rem;
-        }
-
-        .sr-next {
-            right: 1rem;
-        }
-
-        .sr-cta {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .sr-cta .section-title {
-            text-align: center;
-        }
-
-        .sr-cta-text {
-            font-size: .9rem;
-            line-height: 2;
-            opacity: .8;
-            margin-top: 1rem;
-        }
-
-        .sr-cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .sr-cta-buttons .btn {
-            min-width: 200px;
-            text-align: center;
-        }
-
-        .sr-slide-wrap {
-            position: relative;
-            overflow: hidden;
-            background: var(--brown-deep);
-        }
-
-        .sr-slide-track {
-            display: flex;
-            transition: transform .6s cubic-bezier(.4, 0, .2, 1);
-        }
-
-        .sr-slide {
-            min-width: 100%;
-            height: 780px;
-            object-fit: contain;
-            display: block;
-            background: var(--brown-deep);
-        }
-
-        .sr-dots-dots {
-            position: absolute;
-            bottom: 1.2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: .6rem;
-            z-index: 10;
-        }
-
-        .sr-dots-dot {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, .45);
-            cursor: pointer;
-            transition: background .2s, transform .2s;
-            border: 2px solid rgba(255, 255, 255, .6);
-            padding: 0;
-        }
-
-        .sr-dots-dot.active {
-            background: #fff;
-            transform: scale(1.25);
-        }
-
-        @media(max-width:720px) {
-            .flavors-wrap {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-
-            .sr-slide {
-                height: 420px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css?v=4" />
 </head>
 
 <body>
     <script src="nav.js"></script>
 
-    <div class="page-hero-strip"
-        style="margin-top:72px;--hero-img:url('Fotos/laden/laden2.webp');background-position:center 30%;">
+    <div class="page-hero-strip" style="--hero-img:url('Fotos/laden/laden2.webp');background-position:center 30%;">
         <div class="page-hero-strip-text">
             <p class="section-label">Unsere Kreationen</p>
             <h1 class="section-title">Der <em>Showroom</em></h1>
-        </div>
-    </div>
-    <div style="max-width:1100px;margin:0 auto;padding:2.5rem 4rem 1rem;">
-        <p style="font-size:.87rem;line-height:2;opacity:.75;max-width:560px;">
-            Von der klassischen Hochzeitstorte bis zur modernen Designer-Kreation,
-            lassen Sie sich von unseren echten Kreationen inspirieren.
-        </p>
-    </div>
-    <div style="max-width:1100px;margin:0 auto;padding:0 4rem;">
-        <div class="sr-slide-wrap">
-            <div class="sr-slide-track">
-                <img src="Fotos/showroom/torte1.webp" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte2.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte3.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte6.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte7.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte8.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte9.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte10.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-                <img src="Fotos/showroom/torte11.webp" loading="lazy" decoding="async" alt="" class="sr-slide" />
-            </div>
-            <button class="sr-arrow sr-prev" id="sr-prev" aria-label="Vorheriges Bild">‹</button>
-            <button class="sr-arrow sr-next" id="sr-next" aria-label="Nächstes Bild">›</button>
-            <div class="sr-dots-dots" id="sr-dots"></div>
-        </div>
-    </div>
-    <script>
-        (function () {
-            const slides = document.querySelectorAll('.sr-slide');
-            const dotsWrap = document.getElementById('sr-dots');
-            let cur = 0;
-            if (slides[1]) slides[1].loading = 'eager';
-            slides.forEach((_, i) => {
-                const d = document.createElement('button');
-                d.className = 'sr-dots-dot' + (i === 0 ? ' active' : '');
-                d.setAttribute('aria-label', 'Bild ' + (i + 1));
-                d.onclick = () => go(i);
-                dotsWrap.appendChild(d);
-            });
-            function go(n) {
-                dotsWrap.children[cur].classList.remove('active');
-                cur = (n + slides.length) % slides.length;
-                document.querySelector('.sr-slide-track').style.transform = `translateX(-${cur * 100}%)`;
-                dotsWrap.children[cur].classList.add('active');
-                slides[(cur + 1) % slides.length].loading = 'eager';
-            }
-            let timer = setInterval(() => go(cur + 1), 5000);
-            const restart = () => { clearInterval(timer); timer = setInterval(() => go(cur + 1), 5000); };
-            document.getElementById('sr-prev').onclick = () => { go(cur - 1); restart(); };
-            document.getElementById('sr-next').onclick = () => { go(cur + 1); restart(); };
-        })();
-    </script>
-    <div class="flavors-wrap" style="margin-top:3rem;">
-        <div class="flavors-inner">
-            <p class="section-label">Verfügbare Geschmacksrichtungen</p>
-            <h2 class="section-title">Unsere <em>Füllungen</em></h2>
-            <p class="flavors-text">Kombinieren Sie Ihre Lieblingssorten – oder fragen Sie uns nach Ihrem ganz eigenen Wunschgeschmack.</p>
-            <div class="flavor-grid">
-                <div class="flavor-pill">Vanille</div>
-                <div class="flavor-pill">Schokolade</div>
-                <div class="flavor-pill">Erdbeere</div>
-                <div class="flavor-pill">Orange</div>
-                <div class="flavor-pill">Karamell</div>
-                <div class="flavor-pill">Kokos</div>
-                <div class="flavor-pill">Kirsch</div>
-                <div class="flavor-pill">Nuss-Nougat</div>
-                <div class="flavor-pill special">Auf Anfrage</div>
-            </div>
+            <p class="hero-strip-sub">Jede Torte ein Unikat</p>
         </div>
     </div>
 
-    <div class="sr-cta">
-        <p class="section-label">Ihre Wunschtorte</p>
-        <h2 class="section-title">Lassen Sie uns <em>gemeinsam</em> etwas Besonderes kreieren</h2>
-        <p class="sr-cta-text">Erzählen Sie uns von Ihrem Anlass, Ihren Lieblingsfarben und Geschmäckern –
-            wir melden uns innerhalb von 48 Stunden mit einem Vorschlag.</p>
-        <div class="sr-cta-buttons">
-            <a class="btn btn-fill" href="bestellen.html">Torte anfragen</a>
-            <a class="btn btn-outline-dark" href="https://wa.me/4915772519649" target="_blank" rel="noopener">Per
-                WhatsApp</a>
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-label">Inspiration</p>
+                <h2 class="section-title">Echte Torten aus unserer <em>Backstube</em></h2>
+                <p class="section-intro">Von der klassischen Hochzeitstorte bis zur modernen Designer-Kreation –
+                    lassen Sie sich von unseren Arbeiten inspirieren.</p>
+            </div>
+            <div class="slider" data-interval="5000">
+                <div class="slider-track">
+                    <img src="Fotos/showroom/torte1.webp" decoding="async" alt="Torte von Bäckerei Alisa" />
+                    <img src="Fotos/showroom/torte2.webp" loading="lazy" decoding="async" alt="Torte von Bäckerei Alisa" />
+                    <img src="Fotos/showroom/torte3.webp" loading="lazy" decoding="async" alt="Torte von Bäckerei Alisa" />
+                    <img src="Fotos/showroom/torte6.webp" loading="lazy" decoding="async" alt="Torte von Bäckerei Alisa" />
+                    <img src="Fotos/showroom/torte7.webp" loading="lazy" decoding="async" alt="Torte von Bäckerei Alisa" />
+                    <img src="Fotos/showroom/torte8.webp" loading="lazy" decoding="async" alt="Torte von Bäckerei Alisa" />
+                    <img src="Fotos/showroom/torte9.webp" loading="lazy" decoding="async" alt="Torte von Bäckerei Alisa" />
+                    <img src="Fotos/showroom/torte10.webp" loading="lazy" decoding="async" alt="Torte von Bäckerei Alisa" />
+                    <img src="Fotos/showroom/torte11.webp" loading="lazy" decoding="async" alt="Torte von Bäckerei Alisa" />
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section class="section section--dark">
+        <div class="container--narrow">
+            <div class="section-head">
+                <p class="section-label">Verfügbare Geschmacksrichtungen</p>
+                <h2 class="section-title">Unsere <em>Füllungen</em></h2>
+                <p class="section-intro">Kombinieren Sie Ihre Lieblingssorten – oder fragen Sie uns nach Ihrem ganz
+                    eigenen Wunschgeschmack.</p>
+            </div>
+            <div class="tags">
+                    <span class="tag">Vanille</span>
+                    <span class="tag">Schokolade</span>
+                    <span class="tag">Erdbeere</span>
+                    <span class="tag">Orange</span>
+                    <span class="tag">Karamell</span>
+                    <span class="tag">Kokos</span>
+                    <span class="tag">Kirsch</span>
+                    <span class="tag">Nuss-Nougat</span>
+                    <span class="tag tag--gold">Auf Anfrage</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--alt cta">
+        <div class="container--narrow">
+            <div class="section-head" style="margin-bottom:0;">
+                <p class="section-label">Ihre Wunschtorte</p>
+                <h2 class="section-title">Lassen Sie uns <em>gemeinsam</em> etwas Besonderes kreieren</h2>
+                <p class="section-intro">Erzählen Sie uns von Ihrem Anlass, Ihren Lieblingsfarben und Geschmäckern –
+                    wir melden uns innerhalb von 48 Stunden mit einem Vorschlag.</p>
+            </div>
+            <div class="cta-buttons">
+                <a class="btn btn-fill" href="bestellen.html">Torte anfragen</a>
+                <a class="btn btn-outline-dark" href="https://wa.me/4915772519649" target="_blank" rel="noopener">Per WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="slider.js"></script>
 
     <footer class="site-footer">
         <div class="footer-inner">

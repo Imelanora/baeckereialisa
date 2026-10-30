@@ -22,35 +22,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=4" />
     <style>
         .kontakt-wrap {
-            max-width: 1100px;
+            max-width: 1164px;
             margin: 0 auto;
-            padding: 3rem 4rem 4rem;
-        }
-
-        .kontakt-intro {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .kontakt-intro-text {
-            font-size: .9rem;
-            line-height: 2;
-            color: var(--text);
-            opacity: .8;
-            max-width: 520px;
-            margin-top: 1rem;
-        }
-
-        .quick-actions {
-            display: flex;
-            gap: .8rem;
-            flex-wrap: wrap;
         }
 
         .icon-btn {
@@ -270,9 +246,7 @@
         .social-section {
             background: var(--brown-dark);
             color: var(--brown-light);
-            padding: 4.5rem 2rem;
             text-align: center;
-            margin-top: 1rem;
         }
 
         .social-section .section-label {
@@ -342,9 +316,6 @@
         }
 
         @media(max-width:720px) {
-            .kontakt-wrap {
-                padding: 2rem 1.5rem 3rem;
-            }
 
             .standorte-grid {
                 grid-template-columns: 1fr;
@@ -363,17 +334,6 @@
                 margin-top: .8rem;
             }
 
-            .quick-actions {
-                width: 100%;
-            }
-
-            .quick-actions .btn {
-                flex: 1;
-            }
-
-            .social-section {
-                padding: 3.5rem 1.5rem;
-            }
 
             .hours {
                 font-size: .82rem;
@@ -400,25 +360,25 @@
 <body>
     <script src="nav.js"></script>
 
-    <div class="page-hero-strip" style="margin-top:72px;--hero-img:url('Fotos/laden/laden14.webp');background-position:center 50%;">
+    <div class="page-hero-strip" style="--hero-img:url('Fotos/laden/laden14.webp');background-position:center 50%;">
         <div class="page-hero-strip-text">
             <p class="section-label">Finden Sie uns</p>
             <h1 class="section-title"><em>Kontakt</em> & Anfahrt</h1>
+            <p class="hero-strip-sub">Zweimal im Ruhrgebiet für Sie da</p>
         </div>
     </div>
-    <div class="kontakt-wrap">
-        <div class="kontakt-intro">
-            <div>
-                <p class="section-label">Unsere zwei Standorte</p>
-                <h2 class="section-title">Wir sind <em>zweimal</em> für Sie da</h2>
-                <p class="kontakt-intro-text">Ob Frühstück, Burek zum Mitnehmen oder die Torte für Ihren großen Tag –
-                    rufen Sie uns an, schreiben Sie uns per WhatsApp oder kommen Sie einfach vorbei.</p>
-            </div>
-            <div class="quick-actions">
+
+    <div class="kontakt-wrap section">
+        <div class="section-head" style="margin-bottom:0;">
+            <p class="section-label">Unsere zwei Standorte</p>
+            <h2 class="section-title">Wir sind <em>zweimal</em> für Sie da</h2>
+            <p class="section-intro">Ob Frühstück, Burek zum Mitnehmen oder die Torte für Ihren großen Tag –
+                rufen Sie uns an, schreiben Sie uns per WhatsApp oder kommen Sie einfach vorbei.</p>
+        </div>
+        <div class="cta-buttons quick-actions">
                 <a class="btn btn-outline-dark icon-btn" href="tel:+4915772519649"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Anrufen</a>
                 <a class="btn btn-fill icon-btn" href="https://wa.me/4915772519649" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4l-4.5 1.1z"/><path d="M9 8.5c.2 3.2 2.9 6.1 6.3 6.5l1-1.4-1.9-1-.9.9a5 5 0 0 1-2.6-2.6l.9-.9-1-1.9L9 8.5z"/></svg>WhatsApp</a>
             </div>
-        </div>
 
         <div class="standorte-grid">
             <div class="standort" data-hours='{"0":["08:00","16:00"],"1":["06:00","17:30"],"2":["06:00","17:30"],"3":["06:00","17:30"],"4":["06:00","17:30"],"5":["06:00","17:30"],"6":["08:00","16:00"]}'>
@@ -506,7 +466,7 @@
         </div>
     </div>
 
-    <div class="social-section">
+    <div class="social-section section">
         <p class="section-label">Social Media</p>
         <h2 class="section-title">Folgen Sie <em>uns</em></h2>
         <p class="social-text">Neue Torten, frische Angebote und Einblicke in unsere Backstube –

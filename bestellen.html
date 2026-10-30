@@ -5,6 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bestellen – Bäckerei Alisa</title>
+    <meta name="description" content="Torte online anfragen bei Bäckerei Alisa – Anlass, Geschmack und Wünsche angeben, wir melden uns innerhalb von 48 Stunden." />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bäckerei Alisa" />
+    <meta property="og:title" content="Bestellen – Bäckerei Alisa" />
+    <meta property="og:description" content="Torte online anfragen bei Bäckerei Alisa – Anlass, Geschmack und Wünsche angeben, wir melden uns innerhalb von 48 Stunden." />
+    <meta property="og:url" content="https://baeckerei-alisa.com/bestellen.html" />
+    <meta property="og:image" content="https://baeckerei-alisa.com/og-image.jpg" />
+    <meta property="og:locale" content="de_DE" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -93,6 +104,35 @@
 
         .field-error::placeholder {
             color: #c0392b99;
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.4rem 1.6rem;
+            border-left: 3px solid var(--brown);
+            background: var(--bg);
+            font-size: .88rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .form-message.visible {
+            display: block;
+        }
+
+        .form-message.error {
+            border-left-color: #c0392b;
+        }
+
+        .form-message strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: var(--brown-dark);
+            margin-bottom: .2rem;
         }
 
         .form-submit {
@@ -380,6 +420,7 @@
             <div class="form-submit">
                 <button class="btn btn-outline-dark" id="submit-btn">Anfrage absenden</button>
             </div>
+            <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
         </div>
     </div>
 
@@ -388,7 +429,16 @@
             document.getElementById('anfrage-field').classList.toggle('visible', this.checked);
         });
 
+        function showMessage(title, text, isError) {
+            const box = document.getElementById('form-message');
+            box.innerHTML = '<strong>' + title + '</strong>' + text;
+            box.classList.toggle('error', isError);
+            box.classList.add('visible');
+            box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
         document.getElementById('submit-btn').addEventListener('click', function () {
+            document.getElementById('form-message').classList.remove('visible');
             let valid = true;
 
             // Text / tel / date Felder
@@ -469,7 +519,7 @@
                 .then(res => res.json().then(data => ({ ok: res.ok, data })))
                 .then(({ ok, data }) => {
                     if (!ok || data.success !== 'true') throw new Error(data.message || 'Sendefehler');
-                    alert('Vielen Dank! Wir melden uns bald bei Ihnen. 🎂');
+                    showMessage('Vielen Dank für Ihre Anfrage! 🎂', 'Wir melden uns innerhalb von 48 Stunden telefonisch oder per WhatsApp bei Ihnen.', false);
                     document.querySelectorAll('.bestellen-wrap input, .bestellen-wrap select, .bestellen-wrap textarea').forEach(el => {
                         if (el.type === 'checkbox') el.checked = false;
                         else el.value = '';
@@ -477,7 +527,7 @@
                     document.getElementById('anfrage-field').classList.remove('visible');
                 })
                 .catch(() => {
-                    alert('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder rufen Sie uns an.');
+                    showMessage('Das hat leider nicht geklappt.', 'Bitte versuchen Sie es erneut oder rufen Sie uns an: <a href="tel:+4915772519649" style="color:var(--brown);">+49 157 72519649</a>', true);
                 })
                 .finally(() => {
                     btn.disabled = false;

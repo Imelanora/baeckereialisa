@@ -5,6 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontakt – Bäckerei Alisa</title>
+    <meta name="description" content="Bäckerei Alisa in Oberhausen (Dorstener Straße 550) und Bottrop (Gladbecker Straße 189) – Öffnungszeiten, Telefon und Anfahrt." />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bäckerei Alisa" />
+    <meta property="og:title" content="Kontakt – Bäckerei Alisa" />
+    <meta property="og:description" content="Bäckerei Alisa in Oberhausen (Dorstener Straße 550) und Bottrop (Gladbecker Straße 189) – Öffnungszeiten, Telefon und Anfahrt." />
+    <meta property="og:url" content="https://baeckerei-alisa.com/kontakt.html" />
+    <meta property="og:image" content="https://baeckerei-alisa.com/og-image.jpg" />
+    <meta property="og:locale" content="de_DE" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -108,6 +119,23 @@
             color: var(--muted);
         }
 
+        .social-strip {
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+        }
+
+        .kontakt-link {
+            color: var(--brown);
+            text-decoration: none;
+            border-bottom: 1px solid var(--brown-mid);
+            transition: color .2s, border-color .2s;
+        }
+
+        .kontakt-link:hover {
+            color: var(--brown-dark);
+            border-color: var(--brown-dark);
+        }
+
         @media(max-width:720px) {
             .kontakt-wrap {
                 padding-left: 1.5rem;
@@ -156,7 +184,7 @@
                     <div class="kontakt-icon">📞</div>
                     <div>
                         <p class="kontakt-label">Telefon</p>
-                        <p class="kontakt-value">+49 157 72519649</p>
+                        <p class="kontakt-value"><a class="kontakt-link" href="tel:+4915772519649">+49 157 72519649</a></p>
                     </div>
                 </div>
 
@@ -190,7 +218,7 @@
                     <div class="kontakt-icon">📞</div>
                     <div>
                         <p class="kontakt-label">Telefon</p>
-                        <p class="kontakt-value">+49 157 72519649</p>
+                        <p class="kontakt-value"><a class="kontakt-link" href="tel:+4915772519649">+49 157 72519649</a></p>
                     </div>
                 </div>
 
@@ -213,13 +241,14 @@
     </div>
 
     <div class="social-strip">
-        <span style="font-size:1.1rem;">📱</span>
+        <a class="btn btn-fill whatsapp-btn" href="https://wa.me/4915772519649" target="_blank" rel="noopener">Per WhatsApp schreiben</a>
         <p>
-            Instagram: <strong>@baeckereialisa_</strong>
+            Folgen Sie uns:
+            <a class="kontakt-link" href="https://www.instagram.com/baeckereialisa_/" target="_blank" rel="noopener">Instagram</a>
             &nbsp;·&nbsp;
-            Facebook: <strong>@Alisa.Oberhausen</strong>
+            <a class="kontakt-link" href="https://www.facebook.com/Alisa.Oberhausen" target="_blank" rel="noopener">Facebook</a>
             &nbsp;·&nbsp;
-            TikTok: <strong>@beackerei_alisa</strong>
+            <a class="kontakt-link" href="https://www.tiktok.com/@beackerei_alisa" target="_blank" rel="noopener">TikTok</a>
         </p>
     </div>
     <div style="height:4rem;"></div>

@@ -5,6 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Start – Bäckerei Alisa</title>
+    <meta name="description" content="Bäckerei Alisa in Oberhausen und Bottrop – handgemachte Torten, Burek, Balkan-Frühstück und frisches Gebäck. Die etwas andere Bäckerei." />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bäckerei Alisa" />
+    <meta property="og:title" content="Start – Bäckerei Alisa" />
+    <meta property="og:description" content="Bäckerei Alisa in Oberhausen und Bottrop – handgemachte Torten, Burek, Balkan-Frühstück und frisches Gebäck. Die etwas andere Bäckerei." />
+    <meta property="og:url" content="https://baeckerei-alisa.com/" />
+    <meta property="og:image" content="https://baeckerei-alisa.com/og-image.jpg" />
+    <meta property="og:locale" content="de_DE" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -93,6 +104,11 @@
             flex-wrap: wrap;
         }
 
+        .hero-cta .btn {
+            min-width: 230px;
+            text-align: center;
+        }
+
         .home-story {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -168,6 +184,32 @@
         }
 
         @media(max-width:720px) {
+            .hero-badge {
+                letter-spacing: .3em;
+                line-height: 2;
+                padding: .5rem 1.4rem;
+            }
+
+            .hero-badge span {
+                display: block;
+            }
+
+            .hero-badge .hero-badge-sep {
+                display: none;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+                gap: .9rem;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+                max-width: 270px;
+                min-width: 0;
+            }
+
             .home-story {
                 grid-template-columns: 1fr;
             }
@@ -193,12 +235,13 @@
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-badge">Handgemacht · Oberhausen | Bottrop · Seit über 10 Jahren</div>
+            <div class="hero-badge"><span>Handgemacht</span><span class="hero-badge-sep"> · </span><span>Oberhausen | Bottrop</span><span class="hero-badge-sep"> · </span><span>Seit über 10 Jahren</span></div>
             <h1 class="hero-title">Bäckerei<br><em>Alisa</em></h1>
             <p class="hero-sub">Die etwas andere Bäckerei</p>
             <div class="hero-divider"></div>
             <div class="hero-cta">
-                <a class="btn btn-fill" href="showroom.html">Showroom entdecken</a>
+                <a class="btn btn-fill" href="speisekarte.html">Zur Speisekarte</a>
+                <a class="btn" href="showroom.html">Showroom entdecken</a>
                 <a class="btn" href="bestellen.html">Torte bestellen</a>
             </div>
         </div>

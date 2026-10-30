@@ -253,9 +253,16 @@
 
             .shop-slide {
                 min-width: 100%;
-                height: 600px;
-                object-fit: cover;
+                height: 680px;
+                object-fit: contain;
                 display: block;
+                background: var(--brown-deep);
+            }
+
+            @media(max-width:720px) {
+                .shop-slide {
+                    height: 460px;
+                }
             }
 
             .shop-dots-dots {

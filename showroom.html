@@ -28,11 +28,12 @@
     <style>
         .flavors-wrap {
             background: var(--brown-deep);
-            padding: 4rem;
+            padding: 5rem 2rem;
+            text-align: center;
         }
 
         .flavors-inner {
-            max-width: 1100px;
+            max-width: 820px;
             margin: 0 auto;
         }
 
@@ -44,28 +45,58 @@
             color: var(--brown-light);
         }
 
+        .flavors-text {
+            font-size: .88rem;
+            line-height: 1.9;
+            color: var(--brown-light);
+            opacity: .7;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
         .flavor-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-            gap: 1px;
-            margin-top: 1.5rem;
-            background: rgba(196, 168, 130, .2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .8rem;
+            margin-top: 2.2rem;
         }
 
         .flavor-pill {
-            background: transparent;
-            padding: .8rem 1rem;
-            font-size: .76rem;
-            color: var(--brown-light);
-            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .75rem 1.4rem;
+            border: 1px solid rgba(196, 168, 130, .35);
+            border-radius: 999px;
+            font-size: .8rem;
             letter-spacing: .08em;
-            opacity: .85;
-            transition: opacity .2s, background .2s;
+            color: var(--brown-light);
+            transition: background .25s, border-color .25s, color .25s;
+        }
+
+        .flavor-pill::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--brown-mid);
         }
 
         .flavor-pill:hover {
-            opacity: 1;
-            background: rgba(196, 168, 130, .15);
+            background: rgba(196, 168, 130, .12);
+            border-color: var(--brown-mid);
+        }
+
+        .flavor-pill.special {
+            background: var(--brown-mid);
+            border-color: var(--brown-mid);
+            color: var(--brown-deep);
+            font-weight: 400;
+        }
+
+        .flavor-pill.special::before {
+            background: var(--brown-deep);
         }
 
         .sr-arrow {
@@ -250,6 +281,7 @@
         <div class="flavors-inner">
             <p class="section-label">Verfügbare Geschmacksrichtungen</p>
             <h2 class="section-title">Unsere <em>Füllungen</em></h2>
+            <p class="flavors-text">Kombinieren Sie Ihre Lieblingssorten – oder fragen Sie uns nach Ihrem ganz eigenen Wunschgeschmack.</p>
             <div class="flavor-grid">
                 <div class="flavor-pill">Vanille</div>
                 <div class="flavor-pill">Schokolade</div>
@@ -259,7 +291,7 @@
                 <div class="flavor-pill">Kokos</div>
                 <div class="flavor-pill">Kirsch</div>
                 <div class="flavor-pill">Nuss-Nougat</div>
-                <div class="flavor-pill">Auf Anfrage</div>
+                <div class="flavor-pill special">Auf Anfrage</div>
             </div>
         </div>
     </div>

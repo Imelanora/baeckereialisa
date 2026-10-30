@@ -416,6 +416,17 @@ nav {
     }
 }
 
+/* NAV: Burger-Menü, sobald die Links nicht mehr in eine Zeile passen */
+@media(max-width:1040px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-burger {
+        display: flex;
+    }
+}
+
 /* MOBILE */
 @media(max-width:720px) {
     .nav-inner {

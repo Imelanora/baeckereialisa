@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Speisekarte – Bäckerei Alisa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet" />
@@ -80,6 +82,17 @@
             color: var(--muted);
             line-height: 1.6;
             margin-top: .2rem;
+        }
+
+        .menu-note {
+            margin-top: 1rem;
+            padding: 1rem 1.2rem;
+            background: var(--bg2);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: .85rem;
+            line-height: 1.7;
+            color: var(--brown-dark);
         }
 
         /* FOOD PHOTO */
@@ -270,32 +283,29 @@
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Good Morning</span><span
                                     class="menu-item-price">6,90 €</span></div>
-                            <div class="menu-item-desc">1 Kaffee, 2 halbe Brötchen belegt nach Wahl: Wurst, Käse, Ei,
-                                Thunfisch, Camembert, Nutella, Marmelade</div>
+                            <div class="menu-item-desc">1 Kaffee, 2 halbe Brötchen nach Wahl: Wurst, Käse, Ei, Thunfisch, Camembert, Nutella, Marmelade</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Frühstück in New York</span><span
                                     class="menu-item-price">9,90 €</span></div>
-                            <div class="menu-item-desc">Club Sandwich: 3 Lagen Toast mit Ei, Geflügelbacon, Salat,
-                                Tomate, Gurke</div>
+                            <div class="menu-item-desc">Club Sandwich: 3 Lagen Toast mit Ei, Geflügelbacon, Salat, Tomate, Gurke</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Frühstück in California</span><span
                                     class="menu-item-price">11,50 €</span></div>
-                            <div class="menu-item-desc">Club Sandwich: 3 Lagen Toast mit gegrilltem Lachs, Salat, Gurke,
-                                Tomate</div>
+                            <div class="menu-item-desc">Club Sandwich: 3 Lagen Toast mit gegrilltem Lachs, Salat, Gurke, Tomate</div>
                         </div>
-                    </div>
-                    <div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Frühstück in Berlin</span><span
                                     class="menu-item-price">8,90 €</span></div>
                             <div class="menu-item-desc">Bratwurst, 2 Spiegeleier, Brötchen</div>
                         </div>
+                    </div>
+                    <div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Strammer Max</span><span
                                     class="menu-item-price">8,90 €</span></div>
-                            <div class="menu-item-desc">Toast, Schinken, Spiegelei</div>
+                            <div class="menu-item-desc">Toast, Schinken, Spiegelei und Salat</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">American</span><span
@@ -305,8 +315,11 @@
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Alisa's Frühstück</span><span
                                     class="menu-item-price">7,90 €</span></div>
-                            <div class="menu-item-desc">3 verschiedene Sorten Wurst, Käse, Marmelade, 2 Brötchen, 1
-                                große Tasse Kaffee oder Tee</div>
+                            <div class="menu-item-desc">3 Sorten Wurst, Käse, Marmelade, 2 Brötchen, 1 Kaffee oder Tee</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-top"><span class="menu-item-name">Bratkartoffeln mit Spiegelei</span><span
+                                    class="menu-item-price">11,50 €</span></div>
                         </div>
                     </div>
                 </div>
@@ -322,6 +335,14 @@
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Burek</span><span
                                     class="menu-item-price">4,00 €</span></div>
+                            <div class="menu-item-desc">wahlweise mit Fleisch, Kartoffel, Spinat, Käse</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-top"><span class="menu-item-name">Burek Schnecke</span><span
+                                    class="menu-item-price">2,50 €</span></div>
+                            <div class="menu-item-desc">wahlweise mit Fleisch, Kartoffel, Spinat, Käse</div>
+                        </div>
+                        <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Burek mit Vegeta</span><span
                                     class="menu-item-price">5,90 €</span></div>
                             <div class="menu-item-desc">Wahl aus: Fleisch, Kartoffel, Spinat, Käse</div>
@@ -341,6 +362,8 @@
                                     class="menu-item-price">22,00 €</span></div>
                             <div class="menu-item-desc">Auf Bestellung</div>
                         </div>
+                    </div>
+                    <div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Paprika in Schmand</span><span
                                     class="menu-item-price">8,50 €</span></div>
@@ -349,11 +372,8 @@
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Menemen</span><span
                                     class="menu-item-price">8,90 €</span></div>
-                            <div class="menu-item-desc">Gebratene Paprika mit Tomaten und Zwiebeln mit Rührei, dazu
-                                Balkan Brot</div>
+                            <div class="menu-item-desc">Gebratene Paprika mit Tomaten und Zwiebeln, dazu Balkan Brot</div>
                         </div>
-                    </div>
-                    <div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Uštipci mit Schmand</span><span
                                     class="menu-item-price">8,90 €</span></div>
@@ -362,8 +382,7 @@
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Balkan Frühstück</span><span
                                     class="menu-item-price">9,90 €</span></div>
-                            <div class="menu-item-desc">Paprika mit Schmand in Sahnesoße, Sucuk, Ei, Weißkäse, dazu
-                                Balkan Brot</div>
+                            <div class="menu-item-desc">Paprika, Sucuk, Ei, Weißkäse, dazu Balkan Brot</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Bosnisches Frühstück</span><span
@@ -373,7 +392,7 @@
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Hähnchengeschnitzeltes</span><span
                                     class="menu-item-price">13,00 €</span></div>
-                            <div class="menu-item-desc">Wahlweise mit Brot, Salat oder Kartoffeln </div>
+                            <div class="menu-item-desc">Wahlweise mit Brot, Salat oder Kartoffeln</div>
                         </div>
                     </div>
                 </div>
@@ -417,7 +436,7 @@
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Hähnchenbrust Burger</span><span
                                 class="menu-item-price">7,50 €</span></div>
-                        <div class="menu-item-desc">mit Röstzwiebeln</div>
+                        <div class="menu-item-desc">mit Salat und Zwiebeln</div>
                     </div>
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Balkanburger</span><span
@@ -436,22 +455,56 @@
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Ćevapčići 5 Stück</span><span
                                 class="menu-item-price">7,50 €</span></div>
-                        <div class="menu-item-desc">mit Zwiebel, Ajvar und Kajmak, wahlweise in Lepina oder mit Pommes
-                        </div>
+                        <div class="menu-item-desc">mit Zwiebel, Ajvar und Kajmak, in bosnischem Fladenbrot</div>
                     </div>
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Ćevapčići 7 Stück</span><span
                                 class="menu-item-price">9,00 €</span></div>
-                        <div class="menu-item-desc">mit Zwiebel, Ajvar und Kajmak, wahlweise in Lepina oder mit Pommes
-                        </div>
+                        <div class="menu-item-desc">mit Zwiebel, Ajvar und Kajmak, in bosnischem Fladenbrot</div>
                     </div>
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Ćevapčići 10 Stück</span><span
-                                class="menu-item-price">12,50 €</span></div>
-                        <div class="menu-item-desc">mit Zwiebel, Ajvar und Kajmak, wahlweise in Lepina oder mit Pommes
+                                class="menu-item-price">13,00 €</span></div>
+                        <div class="menu-item-desc">mit Zwiebel, Ajvar und Kajmak, in bosnischem Fladenbrot</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BAGUETTE -->
+        <div class="menu-section">
+            <div class="menu-section-title">Baguette</div>
+            <div class="menu-section-inner no-img">
+                <div class="menu-cols">
+                    <div>
+                        <div class="menu-item">
+                            <div class="menu-item-top"><span class="menu-item-name">Baguette div. belegt mit Salat</span><span
+                                    class="menu-item-price">4,70 €</span></div>
+                            <div class="menu-item-desc">Käse, Salami oder Wurst</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-top"><span class="menu-item-name">Baguette mit Ei und Salat</span><span
+                                    class="menu-item-price">4,70 €</span></div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-top"><span class="menu-item-name">Baguette mit Thunfisch und Salat</span><span
+                                    class="menu-item-price">4,70 €</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="menu-item">
+                            <div class="menu-item-top"><span class="menu-item-name">Puten Baguette</span><span
+                                    class="menu-item-price">6,90 €</span></div>
+                            <div class="menu-item-desc">Gegrillte Putenstreifen, Salat und Cocktailsoße</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-top"><span class="menu-item-name">Baguette mit bosnischem Sucuk</span><span
+                                    class="menu-item-price">5,90 €</span></div>
+                            <div class="menu-item-desc">Gegrillter Sucuk, Fetakäse, Salat und Cocktailsoße</div>
                         </div>
                     </div>
                 </div>
+                <p class="menu-note">Auf Wunsch belegen wir Ihnen gerne frisch Balkan Fladen und Brötchen – wahlweise mit Rührei, Sucuk, Käse, Wurst, Pršuta (Schinken) oder Thunfisch.</p>
             </div>
         </div>
 
@@ -469,7 +522,7 @@
                     <div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Bohnensuppe (Pasul)</span><span
-                                    class="menu-item-price">7,90 €</span></div>
+                                    class="menu-item-price">8,50 €</span></div>
                         </div>
                     </div>
                 </div>
@@ -505,8 +558,8 @@
                                     class="menu-item-price">1,00 €</span></div>
                         </div>
                         <div class="menu-item">
-                            <div class="menu-item-top"><span class="menu-item-name">Ketchup / Mayo / Remoulade / Burger
-                                    Soße / Senf</span><span class="menu-item-price">0,50 €</span></div>
+                            <div class="menu-item-top"><span class="menu-item-name">Ketchup / Mayo / Remoulade / Senf</span><span
+                                    class="menu-item-price">0,50 €</span></div>
                         </div>
                     </div>
                 </div>
@@ -521,9 +574,8 @@
                     <div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Shopska Salat</span><span
-                                    class="menu-item-price">7,50 €</span></div>
-                            <div class="menu-item-desc">Salat, Tomate, Gurke, Paprika, Zwiebeln, geriebener Weißkäse
-                            </div>
+                                    class="menu-item-price">6,50 €</span></div>
+                            <div class="menu-item-desc">Salat, Tomate, Gurke, Paprika, Zwiebeln, geriebener Weißkäse</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Cesar</span><span
@@ -537,7 +589,7 @@
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Bauernsalat</span><span
-                                    class="menu-item-price">7,50 €</span></div>
+                                    class="menu-item-price">5,90 €</span></div>
                             <div class="menu-item-desc">Gemischter Salat mit Weißkäse</div>
                         </div>
                     </div>
@@ -552,8 +604,8 @@
                             <div class="menu-item-desc">mit Öl und Essig</div>
                         </div>
                         <div class="menu-item">
-                            <div class="menu-item-top"><span class="menu-item-name">Eingelegte Paprika
-                                    (Ovčavina)</span><span class="menu-item-price">3,90 €</span></div>
+                            <div class="menu-item-top"><span class="menu-item-name">Eingelegte Paprika (Ovčavina)</span><span
+                                    class="menu-item-price">3,90 €</span></div>
                             <div class="menu-item-desc">in Schmand</div>
                         </div>
                         <div class="menu-item">
@@ -561,6 +613,30 @@
                                     class="menu-item-price">3,90 €</span></div>
                             <div class="menu-item-desc">mit Knoblauch und Öl</div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOWLS -->
+        <div class="menu-section">
+            <div class="menu-section-title">Bowls</div>
+            <div class="menu-section-inner no-img">
+                <div>
+                    <div class="menu-item">
+                        <div class="menu-item-top"><span class="menu-item-name">Ćevapčići Bowl</span><span
+                                class="menu-item-price">11,50 €</span></div>
+                        <div class="menu-item-desc">Ćevapčići, Salat, Krautsalat, Zwiebeln, Fetakäse, Ajvar, Kajmak</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top"><span class="menu-item-name">Hähnchenbruststreifen Bowl</span><span
+                                class="menu-item-price">11,50 €</span></div>
+                        <div class="menu-item-desc">Gegrillte Hähnchenbrust, Salat, Zwiebeln, Fetakäse</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-top"><span class="menu-item-name">Sucuk Bowl</span><span
+                                class="menu-item-price">10,50 €</span></div>
+                        <div class="menu-item-desc">Sucuk, Salat, Mais, Edamame, Fetakäse, Zwiebeln</div>
                     </div>
                 </div>
             </div>
@@ -720,18 +796,18 @@
     </div>
     <div class="menu-photo-gallery">
         <div class="gallery-col-left">
-            <img src="Fotos/essen/fruestueck.PNG" alt="Frühstück" />
-            <img src="Fotos/essen/cevapcici.PNG" alt="Ćevapčići" />
-            <img src="Fotos/essen/shopska-salat.PNG" alt="Shopska Salat" />
-            <img src="Fotos/essen/balkan-fruestueck.PNG" alt="Balkan Frühstück" />
-            <img src="Fotos/essen/salat.PNG" alt="Salat" />
+            <img src="Fotos/essen/fruestueck.webp" width="675" height="1200" loading="lazy" decoding="async" alt="Frühstück" />
+            <img src="Fotos/essen/cevapcici.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Ćevapčići" />
+            <img src="Fotos/essen/shopska-salat.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Shopska Salat" />
+            <img src="Fotos/essen/balkan-fruestueck.webp" width="675" height="1200" loading="lazy" decoding="async" alt="Balkan Frühstück" />
+            <img src="Fotos/essen/salat.webp" width="675" height="1200" loading="lazy" decoding="async" alt="Salat" />
         </div>
         <div class="gallery-col-right">
-            <img src="Fotos/essen/chicken-burger.PNG" alt="Chicken Burger" />
-            <img src="Fotos/essen/paprika-in-schmand.PNG" alt="Paprika in Schmand" />
-            <img src="Fotos/essen/sahnekartoffeln.PNG" alt="Sahnekartoffeln" />
-            <img src="Fotos/essen/ustipci-mit-schmand.PNG" alt="Shopska Salat" />
-            <img src="Fotos/essen/sahnekartoffeln.PNG" alt="Shopska Salat" />
+            <img src="Fotos/essen/chicken-burger.webp" width="675" height="1200" loading="lazy" decoding="async" alt="Chicken Burger" />
+            <img src="Fotos/essen/paprika-in-schmand.webp" width="675" height="1200" loading="lazy" decoding="async" alt="Paprika in Schmand" />
+            <img src="Fotos/essen/sahnekartoffeln.webp" width="675" height="1200" loading="lazy" decoding="async" alt="Sahnekartoffeln" />
+            <img src="Fotos/essen/ustipci-mit-schmand.webp" width="675" height="1200" loading="lazy" decoding="async" alt="Uštipci mit Schmand" />
+            <img src="Fotos/essen/sahnekartoffeln.webp" width="675" height="1200" loading="lazy" decoding="async" alt="Sahnekartoffeln" />
         </div>
     </div>
 

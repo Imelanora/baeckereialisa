@@ -473,7 +473,13 @@ nav {
 }
 
 .section--alt {
-    background: var(--bg2);
+    background: var(--bg);
+}
+
+/* Zwei helle Abschnitte hintereinander: kein doppelter Abstand */
+.section:not(.section--dark) + .section:not(.section--dark),
+.section:not(.section--dark) + script + .section:not(.section--dark) {
+    padding-top: 0;
 }
 
 .section--dark {

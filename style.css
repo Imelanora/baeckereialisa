@@ -693,102 +693,6 @@ a.tag:hover {
     }
 }
 
-/* Diashow */
-.slider {
-    position: relative;
-    overflow: hidden;
-    max-width: 960px;
-    margin: 0 auto;
-    background: var(--brown-deep);
-    box-shadow: 0 18px 50px rgba(44, 26, 10, .15);
-}
-
-.slider-track {
-    display: flex;
-    transition: transform .6s cubic-bezier(.4, 0, .2, 1);
-}
-
-.slider-track img {
-    min-width: 100%;
-    height: 680px;
-    object-fit: contain;
-    display: block;
-}
-
-.slider-dots {
-    position: absolute;
-    bottom: 1.2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: .55rem;
-    z-index: 10;
-}
-
-.slider-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .4);
-    border: 1px solid rgba(255, 255, 255, .7);
-    padding: 0;
-    cursor: pointer;
-    transition: background .2s, transform .2s;
-}
-
-.slider-dot.active {
-    background: #fff;
-    transform: scale(1.25);
-}
-
-.slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, .5);
-    background: rgba(44, 26, 10, .45);
-    color: #fff;
-    font-size: 1.7rem;
-    line-height: 1;
-    cursor: pointer;
-    transition: background .2s;
-}
-
-.slider-arrow:hover {
-    background: rgba(44, 26, 10, .85);
-}
-
-.slider-prev {
-    left: 1rem;
-}
-
-.slider-next {
-    right: 1rem;
-}
-
-@media (max-width: 720px) {
-    .slider-track img {
-        height: 460px;
-    }
-
-    .slider-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 1.4rem;
-    }
-
-    .slider-prev {
-        left: .5rem;
-    }
-
-    .slider-next {
-        right: .5rem;
-    }
-}
 
 .photo-grid--4 {
     grid-template-columns: repeat(4, 1fr);
@@ -847,5 +751,139 @@ a.tag:hover {
         grid-template-columns: 1fr;
         max-width: 460px;
         margin: 0 auto;
+    }
+}
+
+/* Foto-Raster: Klick zum Vergrößern, ausgeblendete Fotos */
+.photo-grid img {
+    cursor: zoom-in;
+}
+
+.photo-grid .is-extra {
+    display: none;
+}
+
+.photo-grid.show-all .is-extra {
+    display: block;
+}
+
+.photo-grid--square img {
+    aspect-ratio: 1 / 1;
+}
+
+/* Vergrößerte Ansicht */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    background: rgba(20, 12, 4, .94);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4.5rem;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+
+.lightbox-close,
+.lightbox-arrow {
+    position: absolute;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, .4);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+    transition: background .2s;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+    background: rgba(255, 255, 255, .15);
+}
+
+.lightbox-close {
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.6rem;
+}
+
+.lightbox-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+}
+
+.lightbox-prev {
+    left: 1rem;
+}
+
+.lightbox-next {
+    right: 1rem;
+}
+
+@media (max-width: 720px) {
+    .lightbox {
+        padding: 4rem .8rem;
+    }
+
+    .lightbox-arrow {
+        top: auto;
+        bottom: 1rem;
+        transform: none;
+    }
+
+    .lightbox-prev {
+        left: calc(50% - 60px);
+    }
+
+    .lightbox-next {
+        right: calc(50% - 60px);
+    }
+}
+
+/* Highlights (Startseite) */
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.2rem;
+    padding-top: 2.8rem;
+    border-top: 1px solid var(--line);
+}
+
+.highlight-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2.4rem;
+    color: var(--brown);
+    line-height: 1.1;
+}
+
+.highlight-text {
+    margin-top: .4rem;
+    font-size: .68rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+@media (max-width: 600px) {
+    .highlights {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
     }
 }

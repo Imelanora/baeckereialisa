@@ -22,7 +22,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=4" />
+    <link rel="stylesheet" href="style.css?v=5" />
     <style>
         .hero {
             position: relative;
@@ -414,6 +414,20 @@
             <div class="cta-buttons">
                 <a class="btn btn-outline-dark" href="showroom.html">Unsere Kreationen ansehen</a>
             </div>
+            <div class="highlights">
+                <div>
+                    <p class="highlight-num">10+</p>
+                    <p class="highlight-text">Jahre Erfahrung</p>
+                </div>
+                <div>
+                    <p class="highlight-num">2</p>
+                    <p class="highlight-text">Standorte im Ruhrgebiet</p>
+                </div>
+                <div>
+                    <p class="highlight-num">100 %</p>
+                    <p class="highlight-text">Handgemacht</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -465,23 +479,24 @@
                     authentischen Balkanspezialitäten – bei uns erwartet Sie täglich frischer Burek mit
                     verschiedensten Füllungen, herzhafte warme Gerichte und vieles mehr.</p>
             </div>
-            <div class="slider" data-interval="4500">
-                <div class="slider-track">
-                <img src="Fotos/laden/laden4.webp" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden6.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden7.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden10.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden11.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden14.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden15.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden16.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden17.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden20.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden21.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden22.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden23.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                <img src="Fotos/laden/laden24.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – im Laden" />
-                </div>
+            <div class="photo-grid photo-grid--4" id="laden-grid">
+                <img src="Fotos/laden/laden20.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden21.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden22.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden23.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden24.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden4.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden6.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden7.webp" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden10.webp" class="is-extra" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden11.webp" class="is-extra" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden14.webp" class="is-extra" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden15.webp" class="is-extra" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden16.webp" class="is-extra" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+                <img src="Fotos/laden/laden17.webp" class="is-extra" loading="lazy" decoding="async" alt="Bäckerei Alisa – frisch im Laden" />
+            </div>
+            <div class="cta-buttons">
+                <button class="btn btn-outline-dark" data-show-more="laden-grid">Alle 14 Fotos anzeigen</button>
             </div>
         </div>
     </section>
@@ -497,7 +512,7 @@
         </div>
     </section>
 
-    <script src="slider.js"></script>
+    <script src="lightbox.js"></script>
 
     <footer class="site-footer">
         <div class="footer-inner">

@@ -893,3 +893,113 @@ a.tag:hover {
         gap: 1.6rem;
     }
 }
+
+/* =========================================================
+   HANDY-FEINSCHLIFF
+   ========================================================= */
+.section-title,
+.section-intro,
+.hero-sub {
+    text-wrap: balance;
+}
+
+@media (max-width: 860px) {
+    /* ungerade Fotoanzahl: letztes Foto über die volle Breite statt Lücke */
+    .photo-grid > img:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        aspect-ratio: 4 / 3;
+    }
+}
+
+@media (max-width: 720px) {
+    :root {
+        --nav-h: 92px;
+    }
+
+    .nav-logo img {
+        height: 64px !important;
+    }
+
+    /* kleine Beschriftungen lesbarer machen */
+    .section-label {
+        font-size: .72rem;
+        letter-spacing: .3em;
+    }
+
+    .btn {
+        font-size: .76rem;
+        letter-spacing: .16em;
+        padding-top: .9rem;
+        padding-bottom: .9rem;
+    }
+
+    .tag {
+        font-size: .82rem;
+    }
+
+    .site-footer {
+        font-size: .9rem;
+    }
+
+    .site-footer h4 {
+        font-size: .72rem;
+    }
+
+    .footer-bottom {
+        font-size: .74rem;
+    }
+
+    .hero-strip-sub {
+        font-size: 1rem;
+    }
+
+    /* Highlights nebeneinander statt untereinander */
+    .highlights {
+        grid-template-columns: repeat(3, 1fr);
+        gap: .6rem;
+    }
+
+    .highlight-num {
+        font-size: 1.9rem;
+    }
+
+    .highlight-text {
+        font-size: .66rem;
+        letter-spacing: .12em;
+        line-height: 1.5;
+    }
+
+    /* Speisekarte: Kategorien als wischbare Leiste */
+    .menu-tags {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        margin-left: -1.4rem;
+        margin-right: -1.4rem;
+        padding: .2rem 1.4rem .6rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .menu-tags::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu-tags .tag {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    /* zwei Buttons nebeneinander, wo es passt */
+    .quick-actions {
+        flex-wrap: nowrap;
+    }
+
+    .quick-actions .btn {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+        padding-left: .8rem;
+        padding-right: .8rem;
+    }
+}

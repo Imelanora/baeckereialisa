@@ -118,82 +118,95 @@
             margin-bottom: 1.1rem;
         }
 
-        /* ANGEBOT */
-        .offer-grid {
+        /* ANGEBOT – Mosaik */
+        .offer-mosaic {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.8rem;
-            max-width: 1040px;
+            grid-template-columns: 1.25fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1.2rem;
+            max-width: 1080px;
+            height: 640px;
             margin: 0 auto;
         }
 
-        .offer-card {
-            text-decoration: none;
-            color: var(--text);
-            display: flex;
-            flex-direction: column;
-            transition: transform .3s, box-shadow .3s;
-        }
-
-        .offer-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 40px rgba(44, 26, 10, .12);
-        }
-
-        .offer-img {
-            aspect-ratio: 1 / 1;
+        .offer-tile {
+            position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            text-decoration: none;
+            color: #fff;
+            background: var(--brown-deep);
         }
 
-        .offer-img img {
+        .offer-tile--big {
+            grid-row: 1 / 3;
+        }
+
+        .offer-tile img {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-            transition: transform .6s;
+            transition: transform .8s cubic-bezier(.2, .7, .2, 1);
         }
 
-        .offer-card:hover .offer-img img {
-            transform: scale(1.06);
+        .offer-tile::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(28, 16, 6, .9) 0%, rgba(28, 16, 6, .55) 45%, rgba(28, 16, 6, 0) 80%);
+            transition: background .4s;
         }
 
-        .offer-body {
-            padding: 1.5rem 1.6rem 1.7rem;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            text-align: center;
+        .offer-tile:hover img {
+            transform: scale(1.05);
+        }
+
+        .offer-tile-text {
+            position: relative;
+            z-index: 1;
+            padding: 1.8rem 2rem;
+            text-shadow: 0 1px 12px rgba(0, 0, 0, .35);
         }
 
         .offer-tag {
-            font-size: .62rem;
+            font-size: .64rem;
             letter-spacing: .3em;
             text-transform: uppercase;
-            color: var(--muted);
+            color: var(--brown-mid);
         }
 
-        .offer-body h3 {
+        .offer-tile h3 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-weight: 400;
-            font-size: 1.45rem;
-            color: var(--brown-dark);
-            margin: .4rem 0 .7rem;
+            font-size: 1.7rem;
+            line-height: 1.2;
+            margin: .35rem 0 .5rem;
         }
 
-        .offer-body p:not(.offer-tag) {
-            font-size: .92rem;
-            line-height: 1.8;
-            opacity: .8;
-            flex: 1;
+        .offer-tile--big h3 {
+            font-size: 2.3rem;
+        }
+
+        .offer-tile p.offer-desc {
+            font-size: .9rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, .82);
+            max-width: 380px;
         }
 
         .offer-link {
-            margin-top: 1.2rem;
+            display: inline-block;
+            margin-top: .9rem;
             font-size: .7rem;
             letter-spacing: .2em;
             text-transform: uppercase;
-            color: var(--brown);
+            color: var(--brown-light);
+            border-bottom: 1px solid rgba(242, 232, 220, .5);
+            padding-bottom: .2rem;
         }
 
         /* ZITAT */
@@ -217,23 +230,45 @@
         }
 
         @media(max-width:860px) {
-            .offer-grid {
-                grid-template-columns: 1fr;
-                max-width: 420px;
+            .offer-mosaic {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                height: auto;
+            }
+
+            .offer-tile--big {
+                grid-row: auto;
+                grid-column: 1 / -1;
+                aspect-ratio: 4 / 4.3;
+            }
+
+            .offer-tile:not(.offer-tile--big) {
+                aspect-ratio: 3 / 4;
+            }
+
+            .offer-tile-text {
+                padding: 1.1rem 1.1rem;
+            }
+
+            .offer-tile h3 {
+                font-size: 1.3rem;
+            }
+
+            .offer-tile--big h3 {
+                font-size: 1.9rem;
+            }
+
+            .offer-tile:not(.offer-tile--big) .offer-desc {
+                display: none;
+            }
+
+            .offer-tile:not(.offer-tile--big) .offer-link {
+                font-size: .66rem;
+                letter-spacing: .12em;
             }
         }
 
         @media(max-width:720px) {
-            .offer-tag {
-                font-size: .72rem;
-                letter-spacing: .25em;
-            }
-
-            .offer-link {
-                font-size: .76rem;
-                letter-spacing: .15em;
-            }
-
             .quote-cite {
                 font-size: .72rem;
             }
@@ -452,35 +487,34 @@
                 <h2 class="section-title">Unser <em>Angebot</em></h2>
                 <p class="section-intro">Herzhaft, süß oder für den großen Anlass – bei uns bekommen Sie alles aus einer Hand.</p>
             </div>
-        <div class="offer-grid">
-            <a class="offer-card card" href="speisekarte.html">
-                <div class="offer-img"><img src="Fotos/essen/cevapcici.webp" alt="Balkan-Spezialitäten" loading="lazy" decoding="async" /></div>
-                <div class="offer-body">
-                    <p class="offer-tag">Küche</p>
-                    <h3>Balkan-Spezialitäten</h3>
-                    <p>Ćevapčići, Burek, Uštipci und herzhaftes Frühstück – frisch zubereitet nach Familienrezept.</p>
-                    <span class="offer-link">Zur Speisekarte →</span>
-                </div>
-            </a>
-            <a class="offer-card card" href="showroom.html">
-                <div class="offer-img"><img style="object-position:center 35%;" src="Fotos/showroom/torte8.webp" alt="Torten nach Wunsch" loading="lazy" decoding="async" /></div>
-                <div class="offer-body">
+        <div class="offer-mosaic">
+            <a class="offer-tile offer-tile--big" href="showroom.html">
+                <img src="Fotos/showroom/torte8.webp" style="object-position:center 35%;" alt="Torte mit Schokoladen-Drip" loading="lazy" decoding="async" />
+                <div class="offer-tile-text">
                     <p class="offer-tag">Torten</p>
                     <h3>Torten nach Wunsch</h3>
-                    <p>Hochzeit, Geburtstag oder Taufe – jede Torte ist ein Unikat, gestaltet nach Ihren Vorstellungen.</p>
+                    <p class="offer-desc">Hochzeit, Geburtstag oder Taufe – jede Torte ist ein Unikat, gestaltet nach Ihren Vorstellungen.</p>
                     <span class="offer-link">Showroom ansehen →</span>
                 </div>
             </a>
-            <a class="offer-card card" href="events.html">
-                <div class="offer-img"><img src="Fotos/events/events3.webp" alt="Für Ihr Event" loading="lazy" decoding="async" /></div>
-                <div class="offer-body">
+            <a class="offer-tile" href="speisekarte.html">
+                <img src="Fotos/essen/cevapcici.webp" alt="Ćevapčići im Fladenbrot" loading="lazy" decoding="async" />
+                <div class="offer-tile-text">
+                    <p class="offer-tag">Küche</p>
+                    <h3>Balkan-Spezialitäten</h3>
+                    <p class="offer-desc">Ćevapčići, Burek, Uštipci und herzhaftes Frühstück – frisch nach Familienrezept.</p>
+                    <span class="offer-link">Zur Speisekarte →</span>
+                </div>
+            </a>
+            <a class="offer-tile" href="events.html">
+                <img src="Fotos/events/events3.webp" alt="Buffet mit Lachs und Pita" loading="lazy" decoding="async" />
+                <div class="offer-tile-text">
                     <p class="offer-tag">Catering</p>
                     <h3>Für Ihr Event</h3>
-                    <p>Fingerfood, warme Speisen und Desserts für Feiern jeder Größe – alles aus einer Hand.</p>
+                    <p class="offer-desc">Fingerfood, warme Speisen und Desserts für Feiern jeder Größe.</p>
                     <span class="offer-link">Mehr erfahren →</span>
                 </div>
             </a>
-        </div>
         </div>
     </section>
 

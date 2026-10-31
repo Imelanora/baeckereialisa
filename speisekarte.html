@@ -145,6 +145,31 @@
             opacity: .85;
         }
 
+        .menu-item-allergens {
+            display: inline-block;
+            margin-top: .45rem;
+            padding: .1rem .6rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            font-size: .72rem;
+            letter-spacing: .06em;
+            color: var(--muted);
+        }
+
+        .allergen-sub {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 1.35rem;
+            color: var(--brown-light);
+            text-align: center;
+            margin: 2.6rem 0 1.2rem;
+        }
+
+        .allergen-sub:first-of-type {
+            margin-top: 0;
+        }
+
         .allergen-note {
             margin-top: 2.5rem;
             text-align: center;
@@ -185,7 +210,7 @@
             <div class="section-head" style="margin-bottom:3.5rem;">
                 <p class="section-label">Frühstück bis Abend</p>
                 <h2 class="section-title">Was darf es <em>heute</em> sein?</h2>
-                <p class="section-intro">Alle Preise in Euro inkl. MwSt. Allergene auf Anfrage oder siehe Legende unten.</p>
+                <p class="section-intro">Alle Preise in Euro inkl. MwSt. Die Buchstaben und Zahlen bei den Gerichten stehen für Allergene und Zusatzstoffe – die Erklärung finden Sie ganz unten.</p>
                 <div class="tags menu-tags">
                 <a class="tag" href="#fruehstueck">Frühstück</a>
                 <a class="tag" href="#balkan-fruehstueck">Balkan Frühstück</a>
@@ -213,6 +238,7 @@
                             <div class="menu-item-top"><span class="menu-item-name">Good Morning</span><span
                                     class="menu-item-price">6,90 €</span></div>
                             <div class="menu-item-desc">1 Kaffee, 2 halbe Brötchen nach Wahl: Wurst, Käse, Ei, Thunfisch, Camembert, Nutella, Marmelade</div>
+                            <div class="menu-item-allergens">A, C, G, J, 2, 3</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Frühstück in New York</span><span
@@ -228,6 +254,7 @@
                             <div class="menu-item-top"><span class="menu-item-name">Frühstück in Berlin</span><span
                                     class="menu-item-price">8,90 €</span></div>
                             <div class="menu-item-desc">Bratwurst, 2 Spiegeleier, Brötchen</div>
+                            <div class="menu-item-allergens">A, C, J, 2, 3, 8</div>
                         </div>
                     </div>
                     <div>
@@ -235,6 +262,7 @@
                             <div class="menu-item-top"><span class="menu-item-name">Strammer Max</span><span
                                     class="menu-item-price">8,90 €</span></div>
                             <div class="menu-item-desc">Toast, Schinken, Spiegelei und Salat</div>
+                            <div class="menu-item-allergens">A, C, 2, 3</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">American</span><span
@@ -245,10 +273,12 @@
                             <div class="menu-item-top"><span class="menu-item-name">Alisa's Frühstück</span><span
                                     class="menu-item-price">7,90 €</span></div>
                             <div class="menu-item-desc">3 Sorten Wurst, Käse, Marmelade, 2 Brötchen, 1 Kaffee oder Tee</div>
+                            <div class="menu-item-allergens">A, G, J, 2, 3, 8</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Bratkartoffeln mit Spiegelei</span><span
                                     class="menu-item-price">11,50 €</span></div>
+                            <div class="menu-item-allergens">A, C, J, 2, 3, 8</div>
                         </div>
                     </div>
                 </div>
@@ -265,6 +295,7 @@
                             <div class="menu-item-top"><span class="menu-item-name">Burek</span><span
                                     class="menu-item-price">4,00 €</span></div>
                             <div class="menu-item-desc">wahlweise mit Fleisch, Kartoffel, Spinat, Käse</div>
+                            <div class="menu-item-allergens">A, G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Burek Schnecke</span><span
@@ -275,16 +306,19 @@
                             <div class="menu-item-top"><span class="menu-item-name">Burek mit Vegeta</span><span
                                     class="menu-item-price">5,90 €</span></div>
                             <div class="menu-item-desc">Wahl aus: Fleisch, Kartoffel, Spinat, Käse</div>
+                            <div class="menu-item-allergens">A, G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Mantije mit Joghurt</span><span
                                     class="menu-item-price">6,90 €</span></div>
                             <div class="menu-item-desc">mit Fleisch, 10 Stück und Joghurt-Knoblauch Soße</div>
+                            <div class="menu-item-allergens">A, G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Pita ganz</span><span
                                     class="menu-item-price">16,00 €</span></div>
                             <div class="menu-item-desc">Auf Bestellung</div>
+                            <div class="menu-item-allergens">A, G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Mantije Blech</span><span
@@ -297,31 +331,37 @@
                             <div class="menu-item-top"><span class="menu-item-name">Paprika in Schmand</span><span
                                     class="menu-item-price">8,50 €</span></div>
                             <div class="menu-item-desc">Paprika mit Schmand in Sahnesoße, dazu Balkan Brot</div>
+                            <div class="menu-item-allergens">G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Menemen</span><span
                                     class="menu-item-price">8,90 €</span></div>
                             <div class="menu-item-desc">Gebratene Paprika mit Tomaten und Zwiebeln, dazu Balkan Brot</div>
+                            <div class="menu-item-allergens">C</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Uštipci mit Schmand</span><span
                                     class="menu-item-price">8,90 €</span></div>
                             <div class="menu-item-desc">Teigbällchen mit Schmand</div>
+                            <div class="menu-item-allergens">A, G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Balkan Frühstück</span><span
                                     class="menu-item-price">9,90 €</span></div>
                             <div class="menu-item-desc">Paprika, Sucuk, Ei, Weißkäse, dazu Balkan Brot</div>
+                            <div class="menu-item-allergens">A, C, G, 2, 3</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Bosnisches Frühstück</span><span
                                     class="menu-item-price">9,90 €</span></div>
                             <div class="menu-item-desc">Uštipci, bosnische Wurst, Weißkäse, Kajmak</div>
+                            <div class="menu-item-allergens">A, G, 2, 3</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Hähnchengeschnitzeltes</span><span
                                     class="menu-item-price">13,00 €</span></div>
                             <div class="menu-item-desc">Wahlweise mit Brot, Salat oder Kartoffeln</div>
+                            <div class="menu-item-allergens">A, G</div>
                         </div>
                     </div>
                 </div>
@@ -337,11 +377,13 @@
                         <div class="menu-item-top"><span class="menu-item-name">Rührei Classic</span><span
                                 class="menu-item-price">5,90 €</span></div>
                         <div class="menu-item-desc">mit Butter und Brötchen</div>
+                        <div class="menu-item-allergens">A, C, G</div>
                     </div>
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Rührei mit Sucuk</span><span
                                 class="menu-item-price">8,50 €</span></div>
                         <div class="menu-item-desc">mit Balkan Brot</div>
+                        <div class="menu-item-allergens">A, C, 2, 3, 8</div>
                     </div>
                 </div>
             </div>
@@ -371,6 +413,7 @@
                         <div class="menu-item-top"><span class="menu-item-name">Balkanburger</span><span
                                 class="menu-item-price">7,50 €</span></div>
                         <div class="menu-item-desc">mit Salat, Zwiebeln</div>
+                        <div class="menu-item-allergens">A, G, J, 2, 3, 8</div>
                     </div>
                 </div>
             </div>
@@ -385,16 +428,19 @@
                         <div class="menu-item-top"><span class="menu-item-name">Ćevapčići 5 Stück</span><span
                                 class="menu-item-price">7,50 €</span></div>
                         <div class="menu-item-desc">mit Zwiebel, Ajvar und Kajmak, in bosnischem Fladenbrot</div>
+                        <div class="menu-item-allergens">A, G, J, 2, 3, 8</div>
                     </div>
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Ćevapčići 7 Stück</span><span
                                 class="menu-item-price">9,00 €</span></div>
                         <div class="menu-item-desc">mit Zwiebel, Ajvar und Kajmak, in bosnischem Fladenbrot</div>
+                        <div class="menu-item-allergens">A, G, J, 2, 3, 8</div>
                     </div>
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Ćevapčići 10 Stück</span><span
                                 class="menu-item-price">13,00 €</span></div>
                         <div class="menu-item-desc">mit Zwiebel, Ajvar und Kajmak, in bosnischem Fladenbrot</div>
+                        <div class="menu-item-allergens">A, G, J, 2, 3, 8</div>
                     </div>
                 </div>
             </div>
@@ -446,12 +492,14 @@
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Gulaschsuppe</span><span
                                     class="menu-item-price">8,50 €</span></div>
+                            <div class="menu-item-allergens">A, I, 2, 3, 4</div>
                         </div>
                     </div>
                     <div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Bohnensuppe (Pasul)</span><span
                                     class="menu-item-price">8,50 €</span></div>
+                            <div class="menu-item-allergens">I</div>
                         </div>
                     </div>
                 </div>
@@ -467,6 +515,7 @@
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Sahnekartoffeln</span><span
                                     class="menu-item-price">8,90 €</span></div>
+                            <div class="menu-item-allergens">G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Sahne Gurken Salat</span><span
@@ -505,6 +554,7 @@
                             <div class="menu-item-top"><span class="menu-item-name">Shopska Salat</span><span
                                     class="menu-item-price">6,50 €</span></div>
                             <div class="menu-item-desc">Salat, Tomate, Gurke, Paprika, Zwiebeln, geriebener Weißkäse</div>
+                            <div class="menu-item-allergens">G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Cesar</span><span
@@ -531,11 +581,13 @@
                             <div class="menu-item-top"><span class="menu-item-name">Krautsalat</span><span
                                     class="menu-item-price">4,50 €</span></div>
                             <div class="menu-item-desc">mit Öl und Essig</div>
+                            <div class="menu-item-allergens">J</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Eingelegte Paprika (Ovčavina)</span><span
                                     class="menu-item-price">3,90 €</span></div>
                             <div class="menu-item-desc">in Schmand</div>
+                            <div class="menu-item-allergens">G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Eingelegte Paprika</span><span
@@ -581,11 +633,13 @@
                             <div class="menu-item-top"><span class="menu-item-name">Trilece</span><span
                                     class="menu-item-price">2,50 €</span></div>
                             <div class="menu-item-desc">Milchkuchen mit Karamell</div>
+                            <div class="menu-item-allergens">A, C, G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Krempita</span><span
                                     class="menu-item-price">2,50 €</span></div>
                             <div class="menu-item-desc">Vanillecremetorte</div>
+                            <div class="menu-item-allergens">A, C, G</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Šampita</span><span
@@ -603,6 +657,7 @@
                             <div class="menu-item-top"><span class="menu-item-name">Hurmasice</span><span
                                     class="menu-item-price">1,50 €</span></div>
                             <div class="menu-item-desc">in Sirup getränktes Gebäck</div>
+                            <div class="menu-item-allergens">A</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Baklava</span><span
@@ -640,6 +695,7 @@
                             <div class="menu-item-top"><span class="menu-item-name">Softgetränk</span><span
                                     class="menu-item-price">2,50 €</span></div>
                             <div class="menu-item-desc">Cola, Fanta, Sprite – 0,33 Liter</div>
+                            <div class="menu-item-allergens">1, 9, 11</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Bitter Lemon</span><span
@@ -661,10 +717,12 @@
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Ayran</span><span
                                     class="menu-item-price">2,00 €</span></div>
+                            <div class="menu-item-allergens">G, 2, 3</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Joghurt</span><span
                                     class="menu-item-price">1,90 €</span></div>
+                            <div class="menu-item-allergens">G, 2, 3</div>
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-top"><span class="menu-item-name">Hausgemachte Limonade</span><span
@@ -685,6 +743,7 @@
                         <div class="menu-item-top"><span class="menu-item-name">Kaffee Crema</span><span
                                 class="menu-item-price">2,50 € / 2,90 €</span></div>
                         <div class="menu-item-desc">Klein / Groß</div>
+                        <div class="menu-item-allergens">11</div>
                     </div>
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Cappuccino</span><span
@@ -702,10 +761,12 @@
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Espresso</span><span
                                 class="menu-item-price">2,30 €</span></div>
+                        <div class="menu-item-allergens">11</div>
                     </div>
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Bosnischer Kaffe</span><span
                                 class="menu-item-price">2,50 €</span></div>
+                        <div class="menu-item-allergens">11</div>
                     </div>
                     <div class="menu-item">
                         <div class="menu-item-top"><span class="menu-item-name">Tee</span><span
@@ -750,6 +811,7 @@
                 <p class="section-label">Kennzeichnung</p>
                 <h2 class="section-title">Allergene & <em>Zusatzstoffe</em></h2>
             </div>
+            <h3 class="allergen-sub">Allergene</h3>
             <div class="allergen-cols">
                 <div class="allergen-row">
                     <div class="allergen-code">A</div>
@@ -806,6 +868,33 @@
                 <div class="allergen-row">
                     <div class="allergen-code">N</div>
                     <div class="allergen-text">Weichtiere und daraus gewonnene Erzeugnisse</div>
+                </div>
+            </div>
+            <h3 class="allergen-sub">Zusatzstoffe</h3>
+            <div class="allergen-cols">
+                <div class="allergen-row">
+                    <div class="allergen-code">1</div>
+                    <div class="allergen-text">Farbstoff</div>
+                </div>
+                <div class="allergen-row">
+                    <div class="allergen-code">2</div>
+                    <div class="allergen-text">Konservierungsstoff</div>
+                </div>
+                <div class="allergen-row">
+                    <div class="allergen-code">3</div>
+                    <div class="allergen-text">Antioxidationsmittel</div>
+                </div>
+                <div class="allergen-row">
+                    <div class="allergen-code">4</div>
+                    <div class="allergen-text">Geschmacksverstärker</div>
+                </div>
+                <div class="allergen-row">
+                    <div class="allergen-code">8</div>
+                    <div class="allergen-text">Phosphat</div>
+                </div>
+                <div class="allergen-row">
+                    <div class="allergen-code">11</div>
+                    <div class="allergen-text">Koffeinhaltig</div>
                 </div>
             </div>
             <p class="allergen-note">Trotz sorgfältiger Zubereitung können Spuren von Allergenen nicht ausgeschlossen werden.
